@@ -1,3 +1,35 @@
+# Marionome
+
+## Todo
+- [ ] Todo here.
+- [ ] Marionome component (contains dots)
+    - [ ] Marionome state
+        - [ ] Current beat
+        - [ ] Current tempo
+        - [ ] Timer
+    - [ ] Mario component
+        - > [ ] Emit sound for each jump (corresponds to beat)
+    - > [ ] Platform component
+        - [ ] Looks like a mushroom?
+        - > [ ] On/off state
+        - > [ ] Nice on/off animation
+    - [ ] BPM dial component 
+        - [ ] Range toggle
+        - [ ] Numeric display
+        - [ ] Game speed?
+- [ ] Write jest tests.
+- Mariotheme?
+    - Dot becomes mario
+    - Sound becomes jump sound
+    - Accent becomes him saying something
+
+
+## Eventual blogpost learnings
+- Jest
+- Gitflow (https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
