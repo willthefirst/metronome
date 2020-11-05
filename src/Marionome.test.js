@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import Marionome from './Marionome';
 
 test('renders learn react link', () => {
-  render(<App />);
+  render(<Marionome />);
   const linkElement = screen.getByText(/learn react/i);
   expect(linkElement).toBeInTheDocument();
 });
