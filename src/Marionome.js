@@ -6,9 +6,9 @@ function Marionome() {
   return (
     <div className="marionome">
       <Mario />
+      {/* <Pipe />
       <Pipe />
-      <Pipe />
-      <Pipe />
+      <Pipe /> */}
       <Pipe />
     </div>
   );

@@ -1,8 +1,43 @@
 .marionome {
-    position:  absolute;
-    bottom: 0;
-    left: 200px;
-    height: 400px;
-    width: 800px;
-    background-color: blue;
-  }
+	position: absolute;
+	bottom: 0;
+	left: 200px;
+	height: 400px;
+	width: 800px;
+	background-color: blue;
+}
+
+/* Sprites */
+
+.sprite-image {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+}
+
+.sprite-src-scene {
+    background-image: url("sprites/scene.png");
+}
+
+.sprite-src-characters {
+    background-image: url("sprites/characters.png");
+}
+
+/* Pipe */
+
+.pipe {
+    position: absolute;
+	height: 32px;
+	width: 64px;
+}
+
+.pipe-left {
+	background-position: 0 -263px;
+}
+
+.pipe-right {
+    left: 32px;
+    background-position: -33px -263px;
+}
+
+

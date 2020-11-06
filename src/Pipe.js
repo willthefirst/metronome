@@ -2,8 +2,9 @@ import './Marionome.css';
 
 function Pipe() {
   return (
-    <div className="Pipe">
-      Pipe
+    <div className="pipe">
+      <div className="pipe-left sprite-image sprite-src-scene"></div>
+      <div className="pipe-right sprite-image sprite-src-scene"></div>
     </div>
   );
 }
