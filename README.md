@@ -25,6 +25,7 @@
 
 
 ## Eventual blogpost learnings
+- Working with sprites
 - Jest
 - Gitflow (https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
 

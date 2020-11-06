@@ -1,4 +1,4 @@
-import './Marionome.css';
+import './styles/marionome.scss';
 import Mario from './Mario'
 import Pipe from './Pipe'
 

@@ -1,4 +1,4 @@
-import './Marionome.css';
+import './styles/marionome.scss';
 
 function Pipe() {
   return (
