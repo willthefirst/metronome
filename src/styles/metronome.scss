@@ -1,0 +1,16 @@
+.container {
+  display: grid;
+  grid: grid-tempa
+}
+
+.metronome {
+  display: flex;
+  justify-content: space-around;
+}
+
+.dot {
+  display: inline-block;
+  background-color: rgb(193, 193, 193);
+  border-radius: 5px;
+  padding: 5px;
+}
