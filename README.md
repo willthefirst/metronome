@@ -1,13 +1,14 @@
 # Marionome
 
 ## Todo
-- [ ] Todo here.
+- [ ] First thing: can I get a dot to do the thing. If so, Marionome is worth pursuing.
+    - Left off learning CSS grid here: https://codepip.com/games/grid-garden/
 - [ ] Marionome component (contains dots)
     - [ ] Marionome state
         - [ ] Current beat
         - [ ] Current tempo
         - [ ] Timer
-    - [ ] Mario component
+    - [ ] Mario/dot component
         - > [ ] Emit sound for each jump (corresponds to beat)
     - > [ ] Platform component
         - [ ] Looks like a mushroom?
@@ -26,6 +27,8 @@
 
 ## Eventual blogpost learnings
 - Working with sprites
+    - Using Sass to make working with sprites easier
+- Using flexbox and css grids
 - Jest
 - Gitflow (https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
 

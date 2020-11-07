@@ -7,37 +7,65 @@
 	background-color: blue;
 }
 
-/* Sprites */
+// /* Sprites */
 
-.sprite-image {
-    position: absolute;
-    width: 32px;
-    height: 32px;
-}
+// $sprite-size: 32px;
 
-.sprite-src-scene {
-    background-image: url("../sprites/scene.png");
-}
+// @mixin sprite-image($w, $h) {
+// 	position: absolute;
+// 	width: $w * $sprite-size;
+// 	height: $h * $sprite-size;
+// }
 
-.sprite-src-characters {
-    background-image: url("../sprites/characters.png");
-}
+// %sprite-src-scene {
+// 	background-image: url("../sprites/SVG/red-top-left.svg");
+// }
 
-/* Pipe */
+// %sprite-src-characters {
+// 	background-image: url("../sprites/characters.png");
+// }
 
-.pipe {
-    position: absolute;
-	height: 32px;
-	width: 64px;
-}
+// @function spritePos($x, $y) {
+// 	@return #{-($x * $sprite-size + $x)} #{-($y * $sprite-size + $y)};
+// }
 
-.pipe-left {
-	background-position: 0 -263px;
-}
+// /* Pipe */
 
-.pipe-right {
-    left: 32px;
-    background-position: -33px -263px;
-}
+// .pipe {
+// 	position: absolute;
+// 	height: $sprite-size * 10;
+// 	width: $sprite-size * 2;
+// }
+
+
+// .pipe-top-left {
+// 	@extend %sprite-src-scene;
+// 	@include sprite-image(1, 1);
+// 	background-position: spritePos(0, 8);
+// }
+
+// .pipe-top-right {
+// 	@extend %sprite-src-scene;
+// 	@include sprite-image(1, 1);
+// 	left: $sprite-size * 1;
+// 	background-position: spritePos(1, 8);
+// }
+
+// .pipe-bot-left {
+// 	@extend %sprite-src-scene;
+// 	@include sprite-image(1, 2);
+// 	top: $sprite-size * 1;
+// 	background-position: spritePos(0, 9);
+// 	background-size: contain;
+// 	background-repeat: repeat-y;
+// }
+
+// .pipe-bot-right {
+// 	@extend %sprite-src-scene;
+// 	@include sprite-image(1, 1);
+// 	left: $sprite-size * 1;
+// 	top: $sprite-size * 1;
+// 	background-position: spritePos(1, 9);
+// }
 
 

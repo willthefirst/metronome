@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/index.scss';
-import Marionome from './Marionome';
+import Metronome from './Metronome';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Marionome />
+    <Metronome />
   </React.StrictMode>,
   document.getElementById('root')
 );
