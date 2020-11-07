@@ -1,11 +1,12 @@
 .container {
+  height: 100%;
   display: grid;
-  grid: grid-tempa
-}
+} 
 
 .metronome {
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 
 .dot {
