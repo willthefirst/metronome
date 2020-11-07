@@ -1,8 +1,8 @@
-import '../styles/metronome.scss';
+import styles from '../styles/metronome.module.scss';
 
 function Dot() {
   return (
-    <div className="dot"></div>
+    <div className={styles.dot}></div>
   );
 }
 
