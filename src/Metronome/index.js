@@ -1,10 +1,10 @@
-import "../styles/metronome.scss";
+import styles from "../styles/metronome.module.scss";
 import Dot from "./Dot";
 
-function Marionome() {
+function Metronome() {
 	return (
-		<div className='container'>
-			<div className='metronome'>
+		<div className={styles.container}>
+			<div className={styles.metronome}>
 				<Dot />
 				<Dot />
 				<Dot />
@@ -14,4 +14,4 @@ function Marionome() {
 	);
 }
 
-export default Marionome;
+export default Metronome;
