@@ -1,14 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './styles/index.scss';
-import Metronome from './Metronome';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import Metronome from "./Metronome";
+import "./styles/base.scss";
+import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Metronome />
-  </React.StrictMode>,
-  document.getElementById('root')
+	<React.StrictMode>
+		<Metronome />
+	</React.StrictMode>,
+	document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

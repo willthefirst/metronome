@@ -1,4 +1,4 @@
-import styles from '../styles/metronome.module.scss';
+import styles from '../styles/dot.module.scss';
 
 function Dot() {
   return (

@@ -1,0 +1,17 @@
+.grid {
+	height: 100%;
+	display: grid;
+	grid-template-columns: 1fr minmax(100px, 600px) 1fr;
+}
+
+.colMid {
+	grid-column: 2 / 3;
+  display: flex;
+  flex-flow: column;
+	justify-content: center;
+}
+
+.padVert {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}

@@ -1,7 +1,7 @@
-import styles from "../styles/metronome.module.scss";
+import styles from "../styles/input.module.scss";
 
-function InputRange() {
-	return <input type='range' name='asdasd' id='asdasd' />;
+function InputRange(props) {
+	return <input type='range' name='asdasd' id='asdasd' {...props} />;
 }
 
 export default InputRange;
