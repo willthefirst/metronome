@@ -1,8 +1,9 @@
 import styles from '../styles/dot.module.scss';
 
-function Dot() {
+function Dot({...props}) {
+  const { color } = props;
   return (
-    <div className={styles.dot}></div>
+    <div className={styles.dot} style={{backgroundColor: color}}></div>
   );
 }
 
