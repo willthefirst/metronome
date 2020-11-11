@@ -14,7 +14,7 @@ function Metronome() {
 				<button>-</button>
 			</div>
 			<div className={layout.flexCenter}>
-				<DotContainer />
+				<InputRange orientation="vertical"/>
 			</div>
 			<div className={layout.flexCenter}>
 				<button>+</button>

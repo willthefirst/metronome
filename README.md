@@ -3,6 +3,8 @@
 ## Todo
 - [ ] Finish UI
     - [ ] Create a custom draggable range component
+        - [ ] Gradient fills
+        - [ ] Directions
     - [ ] Conductor component
         - [ ] Light at top
         - [ ] Draggable range component below each

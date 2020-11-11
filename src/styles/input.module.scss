@@ -20,10 +20,10 @@ $thumb-border-color: #000 !default;
 
 $track-width: 100% !default;
 $track-height: 100% !default;
-$track-shadow-size: 0px !default;
-$track-shadow-blur: 0px !default;
-$track-shadow-color: rgba(0, 0, 0, 0) !default;
-$track-border-width: 1px !default;
+$track-shadow-size: 2px !default;
+$track-shadow-blur: 2px !default;
+$track-shadow-color: rgba(146, 11, 11, 0) !default;
+$track-border-width: 0px !default;
 $track-border-color: $dark-gray !default;
 
 $track-radius: 0px !default;
