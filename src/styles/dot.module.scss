@@ -1,8 +1,6 @@
 .dotContainer {
 	display: flex;
-  justify-content: space-between;
-  margin-top: 4rem;
-  margin-bottom: 4rem;
+  	justify-content: space-between;
 }
 
 .dot {
@@ -10,8 +8,4 @@
 	background-color: rgb(193, 193, 193);
 	border-radius: 5px;
 	padding: 5px;
-}
-
-.currentBeatOverlay {
-
 }

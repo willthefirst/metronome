@@ -1,7 +1,12 @@
 import styles from "../styles/input.module.scss";
 
 function InputRange(props) {
-	return <input type='range' name='asdasd' id='asdasd' {...props} />;
+	return (
+		<div>
+			<label htmlFor="bpm">BPM</label>
+			<input type='range' name='bpm' {...props} />
+		</div>
+	)
 }
 
 export default InputRange;
