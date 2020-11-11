@@ -1,32 +1,22 @@
 # Marionome
 
 ## Todo
-- [ ] Table animation. Just get state change working.
-- [ ] Marionome component (contains dots)
-    - [ ] Marionome state
-        - [ ] Current beat
-        - [ ] Current tempo
-        - [ ] Timer
-    - [ ] Mario/dot component
-        - > [ ] Emit sound for each jump (corresponds to beat)
-    - > [ ] Platform component
-        - [ ] Looks like a mushroom?
-        - > [ ] On/off state
-        - > [ ] Nice on/off animation
-    - [ ] BPM dial component 
-        - [ ] Range toggle
-        - [ ] Numeric display
-        - [ ] Game speed?
-- [ ] Write jest tests.
-- Mariotheme?
-    - Dot becomes mario
-    - Sound becomes jump sound
-    - Accent becomes him saying something
+- [ ] Finish UI
+    - [ ] Create a custom draggable range component
+    - [ ] Conductor component
+        - [ ] Light at top
+        - [ ] Draggable range component below each
+        - [ ] First beat (accent) gets a different sound/color
+    - [ ] Tempo component
+        - [ ] Draggable tempo section
+        - [ ] +/- 4 bpms section.
+    - [ ] Button components
+- [ ] Write the backend
 
+## Ideas
+- Many color schemes?
 
 ## Eventual blogpost learnings
-- Working with sprites
-    - Using Sass to make working with sprites easier
 - Using flexbox and css grids
 - Jest
 - Gitflow (https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
