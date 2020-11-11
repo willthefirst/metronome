@@ -1,17 +1,16 @@
 .grid {
 	height: 100%;
 	display: grid;
-	grid-template-columns: 1fr minmax(100px, 600px) 1fr;
+	grid-template-columns: 3fr 1fr;
+	gap: .2em;
 }
 
-.colMid {
-	grid-column: 2 / 3;
-  display: flex;
-  flex-flow: column;
-	justify-content: center;
-}
+.flexCenter {
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
 
-.padVert {
-  margin-top: 4rem;
-  margin-bottom: 4rem;
+	>* {
+		flex: auto;
+	}
 }
