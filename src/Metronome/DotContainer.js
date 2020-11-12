@@ -1,7 +1,5 @@
 import styles from "../styles/dot.module.scss";
-import Dot from "./Dot";
 import InputRange from "./InputRange";
-import CurrentBeatOverlay from "./CurrentBeatOverlay";
 
 function DotContainer() {
 	return (

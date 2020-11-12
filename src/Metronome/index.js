@@ -15,6 +15,9 @@ function Metronome() {
 			</div>
 			<div className={layout.flexCenter}>
 				<InputRange orientation="vertical"/>
+				<InputRange orientation="vertical"/>
+				<InputRange orientation="vertical"/>
+				<InputRange orientation="vertical"/>
 			</div>
 			<div className={layout.flexCenter}>
 				<button>+</button>
