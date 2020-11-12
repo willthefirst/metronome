@@ -7,14 +7,17 @@ function Metronome() {
 	return (
 		<div className={layout.grid}>
 			<div className={layout.flexCenter}>
-				95 BPM
+				<InputRange />
 			</div>
 			<div className={layout.flexCenter}>
 				<button>+</button>
 				<button>-</button>
 			</div>
 			<div className={layout.flexCenter}>
-				<DotContainer />
+				<InputRange orientation="vertical"/>
+				<InputRange orientation="vertical"/>
+				<InputRange orientation="vertical"/>
+				<InputRange orientation="vertical"/>
 			</div>
 			<div className={layout.flexCenter}>
 				<button>+</button>

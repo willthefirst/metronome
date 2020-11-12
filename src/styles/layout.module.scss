@@ -2,13 +2,13 @@
 	height: 100%;
 	display: grid;
 	grid-template-columns: 3fr 1fr;
-	gap: .2em;
 }
 
 .flexCenter {
 	display: flex;
 	flex-direction: row;
 	align-items: stretch;
+	justify-content: space-around;
 
 	>* {
 		flex: auto;

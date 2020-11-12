@@ -1,14 +1,13 @@
 import styles from "../styles/dot.module.scss";
-import Dot from "./Dot";
-import CurrentBeatOverlay from "./CurrentBeatOverlay";
+import InputRange from "./InputRange";
 
 function DotContainer() {
 	return (
 		<div className={styles.dotContainer}>
-			<Dot color='#c1c1c1' />
-			<Dot color='#c1c1c1' />
-			<Dot color='#c1c1c1' />
-			<Dot color='#c1c1c1' />
+			<InputRange />
+			<InputRange />
+			<InputRange />
+			<InputRange />
 		</div>
 	);
 }

@@ -3,6 +3,8 @@
 ## Todo
 - [ ] Finish UI
     - [ ] Create a custom draggable range component
+        - [ ] Gradient fills
+        - [ ] Directions
     - [ ] Conductor component
         - [ ] Light at top
         - [ ] Draggable range component below each
@@ -20,8 +22,6 @@
 - Using flexbox and css grids
 - Jest
 - Gitflow (https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
-
-
 
 # Getting Started with Create React App
 
