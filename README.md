@@ -1,19 +1,20 @@
 # Marionome
 
 ## Todo
+- [ ] Hook up range components
 - [ ] Finish UI
-    - [ ] Create a custom draggable range component
-        - [ ] Gradient fills
-        - [ ] Directions
     - [ ] Conductor component
-        - [ ] Light at top
-        - [ ] Draggable range component below each
+        - [x] Light at top
+        - [x] Draggable range component below each
         - [ ] First beat (accent) gets a different sound/color
+            - [ ] Gradient fills
     - [ ] Tempo component
         - [ ] Draggable tempo section
         - [ ] +/- 4 bpms section.
     - [ ] Button components
-- [ ] Write the backend
+    - [x] Create a custom draggable range component
+        - [x] Directions
+- [ ] Write the backend (with tests!)
 
 ## Ideas
 - Many color schemes?
