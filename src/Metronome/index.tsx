@@ -14,9 +14,7 @@ function Metronome() {
 				<button>+</button>
 				<button>-</button>
 			</div>
-			<div className={layout.flexCenter}>
-				<Conductor />
-			</div>
+			<Conductor className={layout.flexCenter}/>
 			<div className={layout.flexCenter}>
 				<button>+</button>
 				<button>-</button>

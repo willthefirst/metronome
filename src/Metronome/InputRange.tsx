@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import "../styles/input.scss";
 import Slider from "react-rangeslider";
 

@@ -1,16 +1,20 @@
-import React from 'react';
+import * as React from "react";
 import "../styles/input.scss";
 import InputRange from "./InputRange";
 
-function Conductor() {
+type ConductorProps = {
+	className?: string;
+};
+
+function Conductor({ className }: ConductorProps) {
 	return (
-        <div>
-            <InputRange orientation="vertical"/>
-            <InputRange orientation="vertical"/>
-            <InputRange orientation="vertical"/>
-            <InputRange orientation="vertical"/>
-        </div>
-    )
+		<div className={className}>
+			<InputRange orientation='vertical' />
+			<InputRange orientation='vertical' />
+			<InputRange orientation='vertical' />
+			<InputRange orientation='vertical' />
+		</div>
+	);
 }
 
 export default Conductor;
