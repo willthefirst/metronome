@@ -2,9 +2,6 @@
 
 ## Todo
 - [ ] Finish UI
-    - [ ] Create a custom draggable range component
-        - [ ] Gradient fills
-        - [ ] Directions
     - [ ] Conductor component
         - [ ] Light at top
         - [ ] Draggable range component below each
@@ -13,7 +10,11 @@
         - [ ] Draggable tempo section
         - [ ] +/- 4 bpms section.
     - [ ] Button components
-- [ ] Write the backend
+    - [x] Create a custom draggable range component
+        - [x] Directions
+- [ ] Write the backend (with tests!)
+    - [ ] Hook up range components to state
+        - [ ] Gradient fills
 
 ## Ideas
 - Many color schemes?

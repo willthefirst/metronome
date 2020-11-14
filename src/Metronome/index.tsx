@@ -1,6 +1,7 @@
+import React from 'react';
 import layout from "../styles/layout.module.scss";
 import InputRange from "./InputRange";
-import DotContainer from "./DotContainer";
+import Conductor from "./Conductor";
 import cx from "classnames";
 
 function Metronome() {
@@ -14,10 +15,7 @@ function Metronome() {
 				<button>-</button>
 			</div>
 			<div className={layout.flexCenter}>
-				<InputRange orientation="vertical"/>
-				<InputRange orientation="vertical"/>
-				<InputRange orientation="vertical"/>
-				<InputRange orientation="vertical"/>
+				<Conductor />
 			</div>
 			<div className={layout.flexCenter}>
 				<button>+</button>
