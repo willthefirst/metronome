@@ -1,0 +1,11 @@
+.beat {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.beatMarker {
+    height: 1em;
+    background-color: yellow;
+    border: 1px solid black;
+}

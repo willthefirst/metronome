@@ -1,6 +1,5 @@
 import * as React from "react";
-import "../styles/input.scss";
-import InputRange from "./InputRange";
+import Beat from './Beat';
 
 type ConductorProps = {
 	className?: string;
@@ -9,10 +8,10 @@ type ConductorProps = {
 function Conductor({ className }: ConductorProps) {
 	return (
 		<div className={className}>
-			<InputRange orientation='vertical' />
-			<InputRange orientation='vertical' />
-			<InputRange orientation='vertical' />
-			<InputRange orientation='vertical' />
+            <Beat />
+            <Beat />
+            <Beat />
+            <Beat />
 		</div>
 	);
 }
