@@ -1,10 +1,12 @@
 import * as React from "react";
-import styles from "../styles/beat.module.scss";
+import "../styles/beat.scss";
 
-function BeatMarker() {
-	return (
-		<div className={styles.beatMarker}></div>
-	);
+type BeatMarkerProps = {
+	className?: string;
+};
+
+function BeatMarker({ className }: BeatMarkerProps) {
+	return <div className="beatMarker"></div>;
 }
 
 export default BeatMarker;

@@ -2,7 +2,6 @@ import React from 'react';
 import layout from "../styles/layout.module.scss";
 import InputRange from "./InputRange";
 import Conductor from "./Conductor";
-import cx from "classnames";
 
 function Metronome() {
 	return (

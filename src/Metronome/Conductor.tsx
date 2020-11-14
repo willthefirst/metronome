@@ -8,7 +8,7 @@ type ConductorProps = {
 function Conductor({ className }: ConductorProps) {
 	return (
 		<div className={className}>
-            <Beat />
+            <Beat className="active"/>
             <Beat />
             <Beat />
             <Beat />

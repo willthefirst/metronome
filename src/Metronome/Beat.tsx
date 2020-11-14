@@ -1,13 +1,16 @@
 import * as React from "react";
 import InputRange from "./InputRange";
 import BeatMarker from "./BeatMarker";
-import styles from "../styles/beat.module.scss";
+import cx from "classnames";
 
+type BeatProps = {
+    className?: string;
+}
 
-function Beat() {
+function Beat({className}: BeatProps) {
 	return (
-		<div className={styles.beat}>
-            <BeatMarker  />
+		<div className={cx("beat", className)}>
+            <BeatMarker className={className} />
 			<InputRange orientation='vertical' />
 		</div>
 	);
