@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Beat, { BeatState } from "./Beat";
+import layout from "../styles/layout.module.scss";
+import cx from "classnames";
 
 type ConductorProps = {
 	className?: string;
@@ -22,15 +24,21 @@ function Conductor({ className }: ConductorProps) {
 	};
 
 	return (
-		<div className={className}>
-			{beats.map((beat, key) => (
-				<Beat
-					volume={beat.volume}
-					on={beat.on}
-					key={key}
-					onVolumeUpdate={(val) => handleVolUpdate(key, val)}
-				/>
-			))}
+		<div className={layout.row}>
+			<div className={cx(layout.flexCenter, layout.left)}>
+				{beats.map((beat, key) => (
+					<Beat
+						volume={beat.volume}
+						on={beat.on}
+						key={key}
+						onVolumeUpdate={(val) => handleVolUpdate(key, val)}
+					/>
+				))}
+			</div>
+			<div className={cx(layout.flexCenter, layout.right)}>
+				<button>+</button>
+				<button>-</button>
+			</div>
 		</div>
 	);
 }

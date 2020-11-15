@@ -5,17 +5,9 @@ import Conductor from "./Conductor";
 
 function Metronome() {
 	return (
-		<div className={layout.grid}>
-			<BPM className={layout.flexCenter} />
-			<div className={layout.flexCenter}>
-				<button>+</button>
-				<button>-</button>
-			</div>
-			<Conductor className={layout.flexCenter} />
-			<div className={layout.flexCenter}>
-				<button>+</button>
-				<button>-</button>
-			</div>
+		<div className={layout.container}>
+			<BPM />
+			<Conductor />
 		</div>
 	);
 }
