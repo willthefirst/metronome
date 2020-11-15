@@ -14,4 +14,4 @@ function InputRange(props: InputRangeProps) {
 	return <Slider {...props} />;
 }
 
-export default InputRange;˝
+export default InputRange;
