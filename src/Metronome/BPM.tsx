@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import InputRange from "./InputRange";
+import style from "../styles/bpm.module.scss";
 
 type BPMProps = {
 	className?: string;
@@ -12,6 +13,7 @@ function BPM({ className }: BPMProps) {
 
 	return (
 		<div className={className}>
+			<span className={style.numDisplay}>{bpm}</span>
 			<InputRange value={bpm} min={bpmMin} max={bpmMax} />
 		</div>
 	);
