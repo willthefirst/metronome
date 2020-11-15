@@ -11,7 +11,7 @@ function Beat({className}: BeatProps) {
 	return (
 		<div className={cx("beat", className)}>
             <BeatMarker className={className} />
-			<InputRange orientation='vertical' value={50} min={0} max={100}/>
+			<InputRange orientation='vertical' value={50} min={0} max={100} onChange={()=>{}}/>
 		</div>
 	);
 }

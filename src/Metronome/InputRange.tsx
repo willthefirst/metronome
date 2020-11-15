@@ -6,11 +6,12 @@ type InputRangeProps = {
 	orientation?: string,
 	value: number,
 	min: number,
-	max: number
+	max: number,
+	onChange: (val: number) => void;
 };
 
 function InputRange(props: InputRangeProps) {
 	return <Slider {...props} />;
 }
 
-export default InputRange;
+export default InputRange;˝
