@@ -1,8 +1,9 @@
-# Marionome
+# Metronome
 
 ## Todo
-- [ ] Hook up range components
-    - [ ] Start writing tests. Helpful tutorial: https://www.freecodecamp.org/news/8-simple-steps-to-start-testing-react-apps-using-react-testing-library-and-jest/#basics
+- [x] Hook up range components
+- [ ] Review css modules with the new way that beats work.
+- [ ] Start writing tests. Helpful tutorial: https://www.freecodecamp.org/news/8-simple-steps-to-start-testing-react-apps-using-react-testing-library-and-jest/#basics
 - [ ] Finish UI
     - [ ] Conductor component
         - [x] Light at top
