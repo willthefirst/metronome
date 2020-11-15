@@ -4,11 +4,13 @@ import Slider from "react-rangeslider";
 
 type InputRangeProps = {
 	orientation?: string,
-	value: number
+	value: number,
+	min: number,
+	max: number
 };
 
-function InputRange({ orientation, value }: InputRangeProps) {
-	return <Slider orientation={orientation} value={value} />;
+function InputRange(props: InputRangeProps) {
+	return <Slider {...props} />;
 }
 
 export default InputRange;

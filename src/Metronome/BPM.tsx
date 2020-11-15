@@ -6,11 +6,13 @@ type BPMProps = {
 };
 
 function BPM({ className }: BPMProps) {
-	const [bpm, setBPM] = useState(5);
+	const [bpm, setBPM] = useState(230);
+	const [bpmMin] = useState(40);
+	const [bpmMax] = useState(240);
 
 	return (
 		<div className={className}>
-			<InputRange value={bpm} />
+			<InputRange value={bpm} min={bpmMin} max={bpmMax} />
 		</div>
 	);
 }
