@@ -1,8 +1,8 @@
 # Marionome
 
 ## Todo
-- test change
 - [ ] Hook up range components
+    - [ ] Start writing tests. Helpful tutorial: https://www.freecodecamp.org/news/8-simple-steps-to-start-testing-react-apps-using-react-testing-library-and-jest/#basics
 - [ ] Finish UI
     - [ ] Conductor component
         - [x] Light at top

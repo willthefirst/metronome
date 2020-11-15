@@ -3,11 +3,12 @@ import "../styles/input.scss";
 import Slider from "react-rangeslider";
 
 type InputRangeProps = {
-	orientation?: string;
+	orientation?: string,
+	value: number
 };
 
-function InputRange({ orientation }: InputRangeProps) {
-	return <Slider orientation={orientation} value={Math.random() * 50} />;
+function InputRange({ orientation, value }: InputRangeProps) {
+	return <Slider orientation={orientation} value={value} />;
 }
 
 export default InputRange;

@@ -1,19 +1,17 @@
-import React from 'react';
+import React from "react";
 import layout from "../styles/layout.module.scss";
-import InputRange from "./InputRange";
+import BPM from "./BPM";
 import Conductor from "./Conductor";
 
 function Metronome() {
 	return (
 		<div className={layout.grid}>
-			<div className={layout.flexCenter}>
-				<InputRange />
-			</div>
+			<BPM className={layout.flexCenter} />
 			<div className={layout.flexCenter}>
 				<button>+</button>
 				<button>-</button>
 			</div>
-			<Conductor className={layout.flexCenter}/>
+			<Conductor className={layout.flexCenter} />
 			<div className={layout.flexCenter}>
 				<button>+</button>
 				<button>-</button>
