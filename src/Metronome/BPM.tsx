@@ -7,7 +7,7 @@ type BPMProps = {
 };
 
 function BPM({ className }: BPMProps) {
-	const [bpm, setBPM] = useState(230);
+	const [bpm, setBPM] = useState(88);
 	const [bpmMin] = useState(40);
 	const [bpmMax] = useState(240);
 
