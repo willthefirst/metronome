@@ -6,10 +6,21 @@ import cx from "classnames";
 
 type BPMProps = {
 	className?: string;
+	bpmInitial?: number;
 };
 
-function BPM({ className }: BPMProps) {
-	const [bpm, setBPM] = useState(88);
+function keepInRange(num: number, min: number, max: number): number {
+	if (num < min) {
+		return min;
+	}
+	if (num > max) {
+		return max;
+	}
+	return num;
+}
+
+function BPM({ className, bpmInitial }: BPMProps) {
+	const [bpm, setBPM] = useState(bpmInitial || 88);
 	const [bpmMin] = useState(40);
 	const [bpmMax] = useState(240);
 
@@ -26,8 +37,15 @@ function BPM({ className }: BPMProps) {
 				/>
 			</div>
 			<div className={cx(layout.flexCenter, layout.right)}>
-				<button>+</button>
-				<button>-</button>
+				<button
+					aria-label='increase-4-bpm'
+					onClick={() => setBPM(keepInRange(bpm + 4, bpmMin, bpmMax))}
+				>
+					+4 bpm
+				</button>
+				<button aria-label='decrease-4-bpm' onClick={() => setBPM(keepInRange(bpm - 4, bpmMin, bpmMax))}>
+					-4 bpm
+				</button>
 			</div>
 		</div>
 	);

@@ -3,188 +3,200 @@
 exports[`should take a snapshot of the whole app 1`] = `
 <DocumentFragment>
   <div
-    class="grid"
+    class="container"
   >
     <div
-      class="flexCenter"
+      class="row"
     >
-      <span
-        class="numDisplay"
-      >
-        88
-      </span>
       <div
-        aria-orientation="horizontal"
-        aria-valuemax="240"
-        aria-valuemin="40"
-        aria-valuenow="88"
-        class="rangeslider rangeslider-horizontal"
+        class="flexCenter left"
       >
+        <span
+          class="numDisplay"
+        >
+          88
+        </span>
         <div
-          class="rangeslider__fill"
-          style="width: 0px;"
-        />
-        <div
-          class="rangeslider__handle"
-          style="left: 0px;"
-          tabindex="0"
+          aria-orientation="horizontal"
+          aria-valuemax="240"
+          aria-valuemin="40"
+          aria-valuenow="88"
+          class="rangeslider rangeslider-horizontal"
         >
           <div
-            class="rangeslider__handle-label"
+            class="rangeslider__fill"
+            style="width: 0px;"
+          />
+          <div
+            class="rangeslider__handle"
+            style="left: 0px;"
+            tabindex="0"
+          >
+            <div
+              class="rangeslider__handle-label"
+            />
+          </div>
+          <ul
+            class="rangeslider__labels"
           />
         </div>
-        <ul
-          class="rangeslider__labels"
-        />
+      </div>
+      <div
+        class="flexCenter right"
+      >
+        <button
+          aria-label="increase-4-bpm"
+        >
+          +4 bpm
+        </button>
+        <button
+          aria-label="decrease-4-bpm"
+        >
+          -4 bpm
+        </button>
       </div>
     </div>
     <div
-      class="flexCenter"
-    >
-      <button>
-        +
-      </button>
-      <button>
-        -
-      </button>
-    </div>
-    <div
-      class="flexCenter"
+      class="row"
     >
       <div
-        class="beat"
+        class="flexCenter left"
       >
         <div
-          class="marker on"
-        />
-        <div
-          aria-orientation="vertical"
-          aria-valuemax="100"
-          aria-valuemin="0"
-          aria-valuenow="100"
-          class="rangeslider rangeslider-vertical"
+          class="beat"
         >
           <div
-            class="rangeslider__fill"
-            style="height: 0px;"
+            class="marker on"
           />
           <div
-            class="rangeslider__handle"
-            style="top: 0px;"
-            tabindex="0"
+            aria-orientation="vertical"
+            aria-valuemax="100"
+            aria-valuemin="0"
+            aria-valuenow="100"
+            class="rangeslider rangeslider-vertical"
           >
             <div
-              class="rangeslider__handle-label"
+              class="rangeslider__fill"
+              style="height: 0px;"
+            />
+            <div
+              class="rangeslider__handle"
+              style="top: 0px;"
+              tabindex="0"
+            >
+              <div
+                class="rangeslider__handle-label"
+              />
+            </div>
+            <ul
+              class="rangeslider__labels"
             />
           </div>
-          <ul
-            class="rangeslider__labels"
+        </div>
+        <div
+          class="beat"
+        >
+          <div
+            class="marker off"
           />
+          <div
+            aria-orientation="vertical"
+            aria-valuemax="100"
+            aria-valuemin="0"
+            aria-valuenow="50"
+            class="rangeslider rangeslider-vertical"
+          >
+            <div
+              class="rangeslider__fill"
+              style="height: 0px;"
+            />
+            <div
+              class="rangeslider__handle"
+              style="top: 0px;"
+              tabindex="0"
+            >
+              <div
+                class="rangeslider__handle-label"
+              />
+            </div>
+            <ul
+              class="rangeslider__labels"
+            />
+          </div>
+        </div>
+        <div
+          class="beat"
+        >
+          <div
+            class="marker off"
+          />
+          <div
+            aria-orientation="vertical"
+            aria-valuemax="100"
+            aria-valuemin="0"
+            aria-valuenow="25"
+            class="rangeslider rangeslider-vertical"
+          >
+            <div
+              class="rangeslider__fill"
+              style="height: 0px;"
+            />
+            <div
+              class="rangeslider__handle"
+              style="top: 0px;"
+              tabindex="0"
+            >
+              <div
+                class="rangeslider__handle-label"
+              />
+            </div>
+            <ul
+              class="rangeslider__labels"
+            />
+          </div>
+        </div>
+        <div
+          class="beat"
+        >
+          <div
+            class="marker off"
+          />
+          <div
+            aria-orientation="vertical"
+            aria-valuemax="100"
+            aria-valuemin="0"
+            aria-valuenow="50"
+            class="rangeslider rangeslider-vertical"
+          >
+            <div
+              class="rangeslider__fill"
+              style="height: 0px;"
+            />
+            <div
+              class="rangeslider__handle"
+              style="top: 0px;"
+              tabindex="0"
+            >
+              <div
+                class="rangeslider__handle-label"
+              />
+            </div>
+            <ul
+              class="rangeslider__labels"
+            />
+          </div>
         </div>
       </div>
       <div
-        class="beat"
+        class="flexCenter right"
       >
-        <div
-          class="marker off"
-        />
-        <div
-          aria-orientation="vertical"
-          aria-valuemax="100"
-          aria-valuemin="0"
-          aria-valuenow="50"
-          class="rangeslider rangeslider-vertical"
-        >
-          <div
-            class="rangeslider__fill"
-            style="height: 0px;"
-          />
-          <div
-            class="rangeslider__handle"
-            style="top: 0px;"
-            tabindex="0"
-          >
-            <div
-              class="rangeslider__handle-label"
-            />
-          </div>
-          <ul
-            class="rangeslider__labels"
-          />
-        </div>
+        <button>
+          +
+        </button>
+        <button>
+          -
+        </button>
       </div>
-      <div
-        class="beat"
-      >
-        <div
-          class="marker off"
-        />
-        <div
-          aria-orientation="vertical"
-          aria-valuemax="100"
-          aria-valuemin="0"
-          aria-valuenow="25"
-          class="rangeslider rangeslider-vertical"
-        >
-          <div
-            class="rangeslider__fill"
-            style="height: 0px;"
-          />
-          <div
-            class="rangeslider__handle"
-            style="top: 0px;"
-            tabindex="0"
-          >
-            <div
-              class="rangeslider__handle-label"
-            />
-          </div>
-          <ul
-            class="rangeslider__labels"
-          />
-        </div>
-      </div>
-      <div
-        class="beat"
-      >
-        <div
-          class="marker off"
-        />
-        <div
-          aria-orientation="vertical"
-          aria-valuemax="100"
-          aria-valuemin="0"
-          aria-valuenow="50"
-          class="rangeslider rangeslider-vertical"
-        >
-          <div
-            class="rangeslider__fill"
-            style="height: 0px;"
-          />
-          <div
-            class="rangeslider__handle"
-            style="top: 0px;"
-            tabindex="0"
-          >
-            <div
-              class="rangeslider__handle-label"
-            />
-          </div>
-          <ul
-            class="rangeslider__labels"
-          />
-        </div>
-      </div>
-    </div>
-    <div
-      class="flexCenter"
-    >
-      <button>
-        +
-      </button>
-      <button>
-        -
-      </button>
     </div>
   </div>
 </DocumentFragment>
