@@ -29,6 +29,10 @@ function Conductor({ className }: ConductorProps) {
 		setBeats(newBeats)
 	}
 
+	const handleRemoveBeat = () => {
+		setBeats(beats.slice(0, beats.length - 1));
+	}
+
 	return (
 		<div className={layout.row}>
 			<div className={cx(layout.flexCenter, layout.left)}>
@@ -43,7 +47,7 @@ function Conductor({ className }: ConductorProps) {
 			</div>
 			<div className={cx(layout.flexCenter, layout.right)}>
 				<button aria-label='add-beat' onClick={handleAddBeat}>+ beat</button>
-				<button aria-label='remove-beat' onClick={() => setBeats(beats.slice(0, beats.length - 1))}>- beat</button>
+				<button aria-label='remove-beat' onClick={handleRemoveBeat}>- beat</button>
 			</div>
 		</div>
 	);

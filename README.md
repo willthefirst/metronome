@@ -5,7 +5,8 @@
 - [x] Review css modules with the new way that beats work.
 - [x] Start writing tests. Helpful tutorial: https://www.freecodecamp.org/news/8-simple-steps-to-start-testing-react-apps-using-react-testing-library-and-jest/#basics
 - [x] Hook up +/- buttons for bpm with tests.
-- [ ] Hook up +/- buttons for conductor with tests.
+- [x] Hook up +/- buttons for conductor
+- [ ] Write tests for conductor buttons etc.
 - [ ] aria labels for input ranges?
 - [ ] Finish UI
     - [ ] Conductor component
