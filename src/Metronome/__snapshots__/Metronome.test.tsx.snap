@@ -190,11 +190,15 @@ exports[`should take a snapshot of the whole app 1`] = `
       <div
         class="flexCenter right"
       >
-        <button>
-          +
+        <button
+          aria-label="add-beat"
+        >
+          + beat
         </button>
-        <button>
-          -
+        <button
+          aria-label="remove-beat"
+        >
+          - beat
         </button>
       </div>
     </div>

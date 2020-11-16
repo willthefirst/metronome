@@ -6,6 +6,7 @@
 - [x] Start writing tests. Helpful tutorial: https://www.freecodecamp.org/news/8-simple-steps-to-start-testing-react-apps-using-react-testing-library-and-jest/#basics
 - [x] Hook up +/- buttons for bpm with tests.
 - [ ] Hook up +/- buttons for conductor with tests.
+- [ ] aria labels for input ranges?
 - [ ] Finish UI
     - [ ] Conductor component
         - [x] Light at top
