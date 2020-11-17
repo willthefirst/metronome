@@ -17,7 +17,7 @@
     - [ ] Tempo component
         - [ ] Draggable tempo section
         - [ ] +/- 4 bpms section.
-    - [ ] Button components
+    - [ ] Button components: consolidate them vertically.
     - [x] Create a custom draggable range component
         - [x] Directions
 - [ ] Write the backend (with tests!)

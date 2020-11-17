@@ -16,7 +16,7 @@ type BeatProps = {
 
 function Beat({ volume, on, onVolumeUpdate }: BeatProps) {
 	return (
-		<div className={style.beat}>
+		<div className={style.beat} data-testid="beat">
 			<BeatMarker on={on} />
 			<InputRange orientation='vertical' value={volume} min={0} max={100} onChange={onVolumeUpdate} />
 		</div>

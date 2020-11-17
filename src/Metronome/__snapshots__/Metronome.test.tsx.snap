@@ -64,6 +64,7 @@ exports[`should take a snapshot of the whole app 1`] = `
       >
         <div
           class="beat"
+          data-testid="beat"
         >
           <div
             class="marker on"
@@ -95,6 +96,7 @@ exports[`should take a snapshot of the whole app 1`] = `
         </div>
         <div
           class="beat"
+          data-testid="beat"
         >
           <div
             class="marker off"
@@ -126,6 +128,7 @@ exports[`should take a snapshot of the whole app 1`] = `
         </div>
         <div
           class="beat"
+          data-testid="beat"
         >
           <div
             class="marker off"
@@ -157,6 +160,7 @@ exports[`should take a snapshot of the whole app 1`] = `
         </div>
         <div
           class="beat"
+          data-testid="beat"
         >
           <div
             class="marker off"
