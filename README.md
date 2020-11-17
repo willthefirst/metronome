@@ -1,8 +1,13 @@
-# Marionome
+# Metronome
 
 ## Todo
-- test change
-- [ ] Hook up range components
+- [x] Hook up range components
+- [x] Review css modules with the new way that beats work.
+- [x] Start writing tests. Helpful tutorial: https://www.freecodecamp.org/news/8-simple-steps-to-start-testing-react-apps-using-react-testing-library-and-jest/#basics
+- [x] Hook up +/- buttons for bpm with tests.
+- [x] Hook up +/- buttons for conductor
+- [ ] Write tests for conductor buttons etc.
+- [ ] aria labels for input ranges?
 - [ ] Finish UI
     - [ ] Conductor component
         - [x] Light at top
@@ -12,7 +17,7 @@
     - [ ] Tempo component
         - [ ] Draggable tempo section
         - [ ] +/- 4 bpms section.
-    - [ ] Button components
+    - [ ] Button components: consolidate them vertically.
     - [x] Create a custom draggable range component
         - [x] Directions
 - [ ] Write the backend (with tests!)

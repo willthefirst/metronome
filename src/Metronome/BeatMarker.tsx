@@ -1,12 +1,14 @@
 import * as React from "react";
-import "../styles/beat.scss";
+import style from "../styles/beat.module.scss";
+import cx from "classnames";
 
 type BeatMarkerProps = {
-	className?: string;
+	on: boolean;
 };
 
-function BeatMarker({ className }: BeatMarkerProps) {
-	return <div className="beatMarker"></div>;
+function BeatMarker({ on }: BeatMarkerProps) {
+	const onOrOff = on ? style.on : style.off;
+	return <div className={cx(style.marker, onOrOff)}></div>;
 }
 
 export default BeatMarker;

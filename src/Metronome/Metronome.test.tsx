@@ -1,8 +1,10 @@
-import { render, screen } from '@testing-library/react';
-import Metronome from '.';
+import React from "react";
+import { render, cleanup } from "@testing-library/react";
+import Metronome from ".";
 
-test('renders learn react link', () => {
-  render(<Metronome />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+afterEach(cleanup);
+
+it("should take a snapshot of the whole app", () => {
+	const { asFragment } = render(<Metronome />);
+	expect(asFragment(<Metronome />)).toMatchSnapshot();
 });
