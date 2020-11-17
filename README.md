@@ -1,13 +1,7 @@
 # Metronome
 
 ## Todo
-- [x] Hook up range components
-- [x] Review css modules with the new way that beats work.
-- [x] Start writing tests. Helpful tutorial: https://www.freecodecamp.org/news/8-simple-steps-to-start-testing-react-apps-using-react-testing-library-and-jest/#basics
-- [x] Hook up +/- buttons for bpm with tests.
-- [x] Hook up +/- buttons for conductor
-- [ ] Write tests for conductor buttons etc.
-- [ ] aria labels for input ranges?
+- [ ] aria labels for input ranges...get input ranges to actually work?
 - [ ] Finish UI
     - [ ] Conductor component
         - [x] Light at top
@@ -21,6 +15,12 @@
     - [x] Create a custom draggable range component
         - [x] Directions
 - [ ] Write the backend (with tests!)
+- [x] Hook up range components
+- [x] Review css modules with the new way that beats work.
+- [x] Start writing tests. Helpful tutorial: https://www.freecodecamp.org/news/8-simple-steps-to-start-testing-react-apps-using-react-testing-library-and-jest/#basics
+- [x] Hook up +/- buttons for bpm with tests.
+- [x] Hook up +/- buttons for conductor
+- [x] Write tests for conductor buttons etc.
 
 ## Ideas
 - Many color schemes?
@@ -29,6 +29,9 @@
 - Using flexbox and css grids
 - Jest
 - Gitflow (https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
+
+## Resources
+- [Free Code Camp's tutorial on Jest](https://www.freecodecamp.org/news/8-simple-steps-to-start-testing-react-apps-using-react-testing-library-and-jest/#8-testing-http-request)
 
 # Getting Started with Create React App
 
