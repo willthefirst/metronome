@@ -16,9 +16,9 @@ type BeatProps = {
 
 function Beat({ volume, on, onVolumeUpdate }: BeatProps) {
 	return (
-		<div className={style.beat} data-testid="beat">
+		<div className={style.beat}>
 			<BeatMarker on={on} />
-			<InputRange vertical={true} value={volume} min={0} max={100} onChange={onVolumeUpdate} />
+			<InputRange vertical={true} value={volume} min={0} max={100} onChange={onVolumeUpdate} ariaLabelForHandle="beat-slider"/>
 		</div>
 	);
 }

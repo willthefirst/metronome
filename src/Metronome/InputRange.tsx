@@ -2,6 +2,7 @@ import * as React from "react";
 import Slider, { Range } from "rc-slider";
 import "rc-slider/assets/index.css";
 import "../styles/input.scss";
+import { inherits } from "util";
 
 type InputRangeProps = {
 	vertical?: boolean;
@@ -9,6 +10,7 @@ type InputRangeProps = {
 	min: number;
 	max: number;
 	onChange: (val: number) => void;
+	ariaLabelForHandle: string
 };
 
 function InputRange(props: InputRangeProps) {
@@ -17,12 +19,15 @@ function InputRange(props: InputRangeProps) {
 			trackStyle={{
 				backgroundColor: "blue",
 				width: "100%",
-				height: '100%',
+				height: "100%",
 				left: 0,
 				borderRadius: 0
 			}}
 			handleStyle={{
-				display: 'none'
+				height: 0,
+				borderRadius: 0,
+				margin: 0,
+				border: "none"
 			}}
 			railStyle={{
 				backgroundColor: "red",

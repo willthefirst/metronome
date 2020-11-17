@@ -33,7 +33,7 @@ function BPM({ className, bpmInitial }: BPMProps) {
 					min={bpmMin}
 					max={bpmMax}
 					onChange={setBPM}
-					data-testid='bpm-slider'
+					ariaLabelForHandle='bpm-slider'
 				/>
 			</div>
 			<div className={cx(layout.flexCenter, layout.right)}>
