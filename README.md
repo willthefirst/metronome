@@ -1,26 +1,26 @@
 # Metronome
 
 ## Todo
-- [ ] aria labels for input ranges...get input ranges to actually work?
-- [ ] Finish UI
-    - [ ] Conductor component
-        - [x] Light at top
-        - [x] Draggable range component below each
-        - [ ] First beat (accent) gets a different sound/color
-            - [ ] Gradient fills
-    - [ ] Tempo component
-        - [ ] Draggable tempo section
-        - [ ] +/- 4 bpms section.
-    - [ ] Button components: consolidate them vertically.
-    - [x] Create a custom draggable range component
-        - [x] Directions
-- [ ] Write the backend (with tests!)
+- [ ] MVP: get beats working
+- [ ] Polish UI
+    - [ ] BIG bpm text
+    - [ ] Consolidate buttons vertically
+    - [ ] Add stop/start button
+    - [ ] First beat should look a bit different, always
+    - [ ] Clean up borders
+    - [x] Beats
+        - [x] Beats are all same base color,
+        - [x] When a beat is active, it "highlighted in the active color"
+- [ ] Minimum beats = 1
+- [ ] Slider UI: *maybe* opacity changes with velocity
 - [x] Hook up range components
 - [x] Review css modules with the new way that beats work.
 - [x] Start writing tests. Helpful tutorial: https://www.freecodecamp.org/news/8-simple-steps-to-start-testing-react-apps-using-react-testing-library-and-jest/#basics
 - [x] Hook up +/- buttons for bpm with tests.
 - [x] Hook up +/- buttons for conductor
 - [x] Write tests for conductor buttons etc.
+- [x] Uninstall range-slider
+- [x] aria labels for input ranges...get input ranges to actually work?
 
 ## Ideas
 - Many color schemes?
