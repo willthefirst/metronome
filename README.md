@@ -3,11 +3,11 @@
 ## Todo
 - [ ] MVP: get beats working    
     - [x] Write a test for the start/stop button
-    - [ ] Move colors somewhere sensible
     - [ ] Use WebAudio to get a click going
     - [ ] Hook up BPM
     - [ ] Hook up gain nodes to sliders
 - [ ] Polish UI
+    - [ ] Move colors somewhere sensible
     - [ ] BIG bpm text
     - [ ] Consolidate buttons vertically
     - [ ] Add stop/start button
