@@ -1,17 +1,18 @@
 # Metronome
 
 ## Todo
-- [ ] Finish UI
-    - [ ] Beats
-        - [ ] Beats are all same base color,
-        - [ ] When a beat is active, it "highlighted in the active color"
-        - [ ] *maybe* opacity changes with velocity
+- [ ] MVP: get beats working
+- [ ] Polish UI
     - [ ] BIG bpm text
     - [ ] Consolidate buttons vertically
     - [ ] Add stop/start button
-    - [ ] First beat should cool a bit different, always
+    - [ ] First beat should look a bit different, always
     - [ ] Clean up borders
+    - [x] Beats
+        - [x] Beats are all same base color,
+        - [x] When a beat is active, it "highlighted in the active color"
 - [ ] Minimum beats = 1
+- [ ] Slider UI: *maybe* opacity changes with velocity
 - [x] Hook up range components
 - [x] Review css modules with the new way that beats work.
 - [x] Start writing tests. Helpful tutorial: https://www.freecodecamp.org/news/8-simple-steps-to-start-testing-react-apps-using-react-testing-library-and-jest/#basics

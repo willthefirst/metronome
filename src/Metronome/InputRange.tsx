@@ -1,5 +1,5 @@
 import * as React from "react";
-import Slider, { Range } from "rc-slider";
+import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import "../styles/input.scss";
 
