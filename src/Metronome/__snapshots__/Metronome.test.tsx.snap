@@ -21,11 +21,11 @@ exports[`should take a snapshot of the whole app 1`] = `
         >
           <div
             class="rc-slider-rail"
-            style="background-color: red; width: 100%; height: 100%; border-radius: 0;"
+            style="background-color: rgb(241, 250, 238); width: 100%; height: 100%; border-radius: 0;"
           />
           <div
             class="rc-slider-track"
-            style="background-color: blue; width: 24%; height: 100%; left: 0%; border-radius: 0;"
+            style="background-color: rgb(168, 218, 220); width: 24%; height: 100%; left: 0%; border-radius: 0;"
           />
           <div
             class="rc-slider-step"
@@ -71,18 +71,15 @@ exports[`should take a snapshot of the whole app 1`] = `
           class="beat"
         >
           <div
-            class="marker on"
-          />
-          <div
             class="rc-slider rc-slider-vertical"
           >
             <div
               class="rc-slider-rail"
-              style="background-color: red; width: 100%; height: 100%; border-radius: 0;"
+              style="background-color: rgb(69, 123, 157); width: 100%; height: 100%; border-radius: 0;"
             />
             <div
               class="rc-slider-track"
-              style="background-color: blue; width: 100%; height: 100%; left: 0px; border-radius: 0; bottom: 0%;"
+              style="background-color: rgb(29, 53, 87); width: 100%; height: 100%; left: 0px; border-radius: 0; bottom: 0%;"
             />
             <div
               class="rc-slider-step"
@@ -107,18 +104,15 @@ exports[`should take a snapshot of the whole app 1`] = `
           class="beat"
         >
           <div
-            class="marker off"
-          />
-          <div
             class="rc-slider rc-slider-vertical"
           >
             <div
               class="rc-slider-rail"
-              style="background-color: red; width: 100%; height: 100%; border-radius: 0;"
+              style="background-color: rgb(241, 250, 238); width: 100%; height: 100%; border-radius: 0;"
             />
             <div
               class="rc-slider-track"
-              style="background-color: blue; width: 100%; height: 50%; left: 0px; border-radius: 0; bottom: 0%;"
+              style="background-color: rgb(168, 218, 220); width: 100%; height: 50%; left: 0px; border-radius: 0; bottom: 0%;"
             />
             <div
               class="rc-slider-step"
@@ -143,18 +137,15 @@ exports[`should take a snapshot of the whole app 1`] = `
           class="beat"
         >
           <div
-            class="marker off"
-          />
-          <div
             class="rc-slider rc-slider-vertical"
           >
             <div
               class="rc-slider-rail"
-              style="background-color: red; width: 100%; height: 100%; border-radius: 0;"
+              style="background-color: rgb(241, 250, 238); width: 100%; height: 100%; border-radius: 0;"
             />
             <div
               class="rc-slider-track"
-              style="background-color: blue; width: 100%; height: 25%; left: 0px; border-radius: 0; bottom: 0%;"
+              style="background-color: rgb(168, 218, 220); width: 100%; height: 25%; left: 0px; border-radius: 0; bottom: 0%;"
             />
             <div
               class="rc-slider-step"
@@ -179,18 +170,15 @@ exports[`should take a snapshot of the whole app 1`] = `
           class="beat"
         >
           <div
-            class="marker off"
-          />
-          <div
             class="rc-slider rc-slider-vertical"
           >
             <div
               class="rc-slider-rail"
-              style="background-color: red; width: 100%; height: 100%; border-radius: 0;"
+              style="background-color: rgb(241, 250, 238); width: 100%; height: 100%; border-radius: 0;"
             />
             <div
               class="rc-slider-track"
-              style="background-color: blue; width: 100%; height: 50%; left: 0px; border-radius: 0; bottom: 0%;"
+              style="background-color: rgb(168, 218, 220); width: 100%; height: 50%; left: 0px; border-radius: 0; bottom: 0%;"
             />
             <div
               class="rc-slider-step"
@@ -226,6 +214,16 @@ exports[`should take a snapshot of the whole app 1`] = `
           - beat
         </button>
       </div>
+    </div>
+    <div
+      class="row"
+    >
+      <button
+        aria-label="start-stop"
+        style="width: 100%;"
+      >
+        Start
+      </button>
     </div>
   </div>
 </DocumentFragment>

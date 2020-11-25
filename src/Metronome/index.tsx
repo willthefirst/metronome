@@ -2,7 +2,7 @@ import React from "react";
 import layout from "../styles/layout.module.scss";
 import BPM from "./BPM";
 import Conductor from "./Conductor";
-import PlayButton from "./PlayButton"
+import PlayButton from "./PlayButton";
 
 function Metronome() {
 	return (

@@ -1,7 +1,12 @@
 # Metronome
 
 ## Todo
-- [ ] MVP: get beats working
+- [ ] MVP: get beats working    
+    - [x] Write a test for the start/stop button
+    - [ ] Move colors somewhere sensible
+    - [ ] Use WebAudio to get a click going
+    - [ ] Hook up BPM
+    - [ ] Hook up gain nodes to sliders
 - [ ] Polish UI
     - [ ] BIG bpm text
     - [ ] Consolidate buttons vertically
@@ -11,6 +16,7 @@
     - [x] Beats
         - [x] Beats are all same base color,
         - [x] When a beat is active, it "highlighted in the active color"
+- [ ] `findDOMNode` issue with rc-slider...fork and pull?
 - [ ] Minimum beats = 1
 - [ ] Slider UI: *maybe* opacity changes with velocity
 - [x] Hook up range components

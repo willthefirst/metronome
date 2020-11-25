@@ -10,7 +10,8 @@ function PlayButton() {
 				style={{ width: "100%" }}
 				onClick={() => {
 					setPlaying(!playing);
-				}}
+                }}
+                aria-label="start-stop"
 			>
 				{playing ? "Stop" : "Start"}
 			</button>
