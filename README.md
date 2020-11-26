@@ -4,6 +4,8 @@
 - [ ] MVP: get beats working    
     - [x] Write a test for the start/stop button
     - [ ] Use WebAudio to get a click going
+        - [ ] For global access to WebAudio's AudioContext, let's make a custom hook.
+            - This might actually be better suited as a Provider, but we'll see.
     - [ ] Hook up BPM
     - [ ] Hook up gain nodes to sliders
 - [ ] Polish UI
