@@ -19,6 +19,7 @@
 - [ ] `findDOMNode` issue with rc-slider...fork and pull?
 - [ ] Minimum beats = 1
 - [ ] Slider UI: *maybe* opacity changes with velocity
+- [ ] Workflow: consider doing things the create-react app way
 - [x] Hook up range components
 - [x] Review css modules with the new way that beats work.
 - [x] Start writing tests. Helpful tutorial: https://www.freecodecamp.org/news/8-simple-steps-to-start-testing-react-apps-using-react-testing-library-and-jest/#basics
