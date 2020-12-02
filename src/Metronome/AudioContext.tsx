@@ -7,11 +7,7 @@ interface AudioContextProvider {
 
 const defaultValue: AudioContextProvider = {
 	audioCtx: undefined,
-	createAudioCtx: function(): void {
-		const AudioCtx = window.AudioContext;
-		const audioCtx = new AudioCtx();
-		this.audioCtx = audioCtx;
-	}
+	createAudioCtx: () => {}
 };
 
 const AudioContext = React.createContext(defaultValue);

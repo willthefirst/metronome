@@ -8,8 +8,7 @@ async function setupSamples(audioContext: AudioContext): Promise<AudioBuffer[]> 
 		samples.map(async (sample) => {
 			const response = await fetch(`${process.env.PUBLIC_URL}/sounds/${sample}`);
 			const arrayBuffer = await response.arrayBuffer();
-			const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
-			return audioBuffer;
+			return audioContext.decodeAudioData(arrayBuffer);
 		})
 	);
 	return audioBuffers;
@@ -21,30 +20,27 @@ function PlayButton() {
 	return (
 		<div className={layout.row}>
 			<AudioConsumer>
-				{(audio) => (
+				{({audioCtx, createAudioCtx}) => (
 					<button
 						style={{ width: "100%" }}
 						onClick={async () => {
 							// We initialize WebAudio here because browsers require a user interaction in order to use WebAudio
-							if (!audio.audioCtx) {
-								audio.createAudioCtx();
+							if (!audioCtx) {
+								audioCtx = createAudioCtx();
 								return;
 							}
-							
-							setupSamples(audio.audioCtx).then((audioBuffers) => {
-								// audiobuffers should look like [clicksound, accentsound]
-								//
 
+							setupSamples(audioCtx).then((audioBuffers) => {
 								// This code should get moved...this is for playing the sounds
 								const sources = audioBuffers.map((buffer) => {
-									const sampleSource = audio.audioCtx!.createBufferSource();
+									const sampleSource = audioCtx!.createBufferSource();
 									sampleSource.buffer = buffer;
-									sampleSource.connect(audio.audioCtx!.destination);
+									sampleSource.connect(audioCtx!.destination);
 									sampleSource.start();
 									return sampleSource;
 								});
 								return sources;
-							});
+							}).catch(error => console.log(error));
 
 							setPlaying(!playing);
 						}}
