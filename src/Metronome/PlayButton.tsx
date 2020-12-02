@@ -1,11 +1,18 @@
 import React, { useState } from "react";
 import layout from "../styles/layout.module.scss";
+import { AudioConsumer } from "./AudioContext";
 
-async function getSample(audioContext: AudioContext, filepath: string) {
-	const response = await fetch(filepath);
-	const arrayBuffer = await response.arrayBuffer();
-	const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
-	return audioBuffer;
+async function setupSamples(audioContext: AudioContext): Promise<AudioBuffer[]> {
+	const samples = [`click.wav`, `accent.wav`];
+	const audioBuffers = await Promise.all(
+		samples.map(async (sample) => {
+			const response = await fetch(`${process.env.PUBLIC_URL}/sounds/${sample}`);
+			const arrayBuffer = await response.arrayBuffer();
+			const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
+			return audioBuffer;
+		})
+	);
+	return audioBuffers;
 }
 
 function PlayButton() {
@@ -13,24 +20,40 @@ function PlayButton() {
 
 	return (
 		<div className={layout.row}>
-			<button
-				style={{ width: "100%" }}
-				onClick={() => {
-					setPlaying(!playing);
-					const AudioContext = window.AudioContext;
-					const audioCtx = new AudioContext();
-					getSample(audioCtx, `${process.env.PUBLIC_URL}/sounds/click.wav`).then((audioBuffer) => {
-                        const sampleSource = audioCtx.createBufferSource();
-                        sampleSource.buffer = audioBuffer;
-                        sampleSource.connect(audioCtx.destination)
-                        sampleSource.start();
-                        return sampleSource;
-                    });
-				}}
-				aria-label='start-stop'
-			>
-				{playing ? "Stop" : "Start"}
-			</button>
+			<AudioConsumer>
+				{(audio) => (
+					<button
+						style={{ width: "100%" }}
+						onClick={async () => {
+							// We initialize WebAudio here because browsers require a user interaction in order to use WebAudio
+							if (!audio.audioCtx) {
+								audio.createAudioCtx();
+								return;
+							}
+							
+							setupSamples(audio.audioCtx).then((audioBuffers) => {
+								// audiobuffers should look like [clicksound, accentsound]
+								//
+
+								// This code should get moved...this is for playing the sounds
+								const sources = audioBuffers.map((buffer) => {
+									const sampleSource = audio.audioCtx!.createBufferSource();
+									sampleSource.buffer = buffer;
+									sampleSource.connect(audio.audioCtx!.destination);
+									sampleSource.start();
+									return sampleSource;
+								});
+								return sources;
+							});
+
+							setPlaying(!playing);
+						}}
+						aria-label='start-stop'
+					>
+						{playing ? "Stop" : "Start"}
+					</button>
+				)}
+			</AudioConsumer>
 		</div>
 	);
 }

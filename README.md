@@ -4,8 +4,10 @@
 - [ ] MVP: get beats working    
     - [x] Write a test for the start/stop button
     - [ ] Use WebAudio to get a click going
+        - [ ] First, figure out how you'll want to work with audiocontext via play/pause.
         - [ ] For global access to WebAudio's AudioContext, let's make a custom hook.
             - This might actually be better suited as a Provider, but we'll see.
+        - [WebAudio resource](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Advanced_techniques#Playing_the_audio_in_time)
     - [ ] Hook up BPM
     - [ ] Hook up gain nodes to sliders
 - [ ] Polish UI
