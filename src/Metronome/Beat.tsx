@@ -4,7 +4,6 @@ import style from "../styles/beat.module.scss";
 
 export interface BeatState {
 	volume: number;
-	isActive: boolean;
 }
 
 type BeatProps = {

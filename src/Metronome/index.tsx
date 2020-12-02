@@ -14,16 +14,17 @@ function createContext(): AudioContext {
 }
 
 let defaultBeats: BeatState[] = [
-	{ volume: 100, isActive: false },
-	{ volume: 50, isActive: false },
-	{ volume: 25, isActive: true },
-	{ volume: 50, isActive: false }
+	{ volume: 100 },
+	{ volume: 50 },
+	{ volume: 25 },
+	{ volume: 50 }
 ];
 
 let settings = {
 	isPlaying: false,
 	bpm: 88,
-	beats: defaultBeats
+	beats: defaultBeats,
+	currentBeatIndex: 0
 };
 
 function Metronome() {
@@ -36,7 +37,7 @@ function Metronome() {
 				}}
 			>
 				<BPM value={settings.bpm} min={40} max={240} />
-				<Conductor beats={settings.beats} />
+				<Conductor beats={settings.beats} currentBeatIndex={settings.currentBeatIndex}/>
 				<PlayButton isPlaying={settings.isPlaying}/>
 			</AudioProvider>
 		</div>

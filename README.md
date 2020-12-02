@@ -5,6 +5,7 @@
     - [x] Write a test for the start/stop button
     - [ ] Use WebAudio to get a click going
         - [x] First, figure out how you'll want to work with audiocontext via play/pause.
+        - [ ] Next up: https://reactjs.org/docs/thinking-in-react.html#step-3-identify-the-minimal-but-complete-representation-of-ui-state
         - [WebAudio resource](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Advanced_techniques#Playing_the_audio_in_time)
         - We now can play sounds.
         - On START
@@ -13,7 +14,6 @@
                 - rotate beat in state, and when this happens
                     - play the sound
                     - current beat should be highlighted visually
-        - [ ] Create a JSON data model to pass in at the top level, and build the site statically.
     - [ ] Hook up BPM
     - [ ] Hook up gain nodes to sliders
 - [ ] Polish UI

@@ -3,13 +3,13 @@ import layout from "../styles/layout.module.scss";
 import cx from "classnames";
 import Beat, { BeatState } from "./Beat";
 
-
 type ConductorProps = {
 	className?: string;
 	beats: BeatState[];
+	currentBeatIndex: number;
 };
 
-function Conductor({ className, beats }: ConductorProps) {
+function Conductor({ className, beats, currentBeatIndex }: ConductorProps) {
 	const [playing, setPlaying] = useState();
 
 	let [beats_, setBeats] = useState(beats);
@@ -22,7 +22,7 @@ function Conductor({ className, beats }: ConductorProps) {
 
 	const handleAddBeat = () => {
 		let newBeats = beats_.slice();
-		newBeats.push({ volume: 50, isActive: false });
+		newBeats.push({ volume: 50 });
 		setBeats(newBeats);
 	};
 
@@ -36,7 +36,7 @@ function Conductor({ className, beats }: ConductorProps) {
 				{beats.map((beat: BeatState, key: number) => (
 					<Beat
 						volume={beat.volume}
-						isActive={beat.isActive}
+						isActive={key === currentBeatIndex}
 						key={key}
 						onVolumeUpdate={(val) => handleVolUpdate(key, val)}
 					/>
