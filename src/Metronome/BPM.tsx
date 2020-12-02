@@ -6,7 +6,9 @@ import cx from "classnames";
 
 type BPMProps = {
 	className?: string;
-	bpmInitial?: number;
+	value: number;
+	min: number;
+	max: number;
 };
 
 function keepInRange(num: number, min: number, max: number): number {
@@ -19,8 +21,8 @@ function keepInRange(num: number, min: number, max: number): number {
 	return num;
 }
 
-function BPM({ className, bpmInitial }: BPMProps) {
-	const [bpm, setBPM] = useState(bpmInitial || 88);
+function BPM({ className, value, min, max }: BPMProps) {
+	const [bpm, setBPM] = useState(value || 88);
 	const [bpmMin] = useState(40);
 	const [bpmMax] = useState(240);
 
@@ -29,9 +31,9 @@ function BPM({ className, bpmInitial }: BPMProps) {
 			<div className={cx(layout.flexCenter, layout.left)}>
 				<span className={style.numDisplay}>{bpm}</span>
 				<InputRange
-					value={bpm}
-					min={bpmMin}
-					max={bpmMax}
+					value={value}
+					min={min}
+					max={max}
 					onChange={setBPM}
 					ariaLabelForHandle='bpm-slider'
 				/>
