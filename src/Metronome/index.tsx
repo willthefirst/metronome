@@ -91,8 +91,9 @@ function Metronome() {
 	function scheduler() {
 		// While there are notes that will need to play before the next interval, schedule them and advance the pointer.
 		while (nextBeatTime < audioCtx!.currentTime + scheduleAheadTime) {
+			let nextBeatTime_ = nextBeatTime;
 			setCurrentBeat((prevBeat) => {
-				scheduleNote(prevBeat, nextBeatTime);
+				scheduleNote(prevBeat, nextBeatTime_);
 				return incrementBeat(prevBeat);
 			});
 		}
