@@ -4,23 +4,15 @@ import { AudioConsumer } from "./AudioContext";
 
 type PlayButtonProps = {
 	isPlaying: boolean;
-	handleToggle: Function
+	handleToggle: Function;
 };
 
 function PlayButton({ isPlaying, handleToggle }: PlayButtonProps) {
 	return (
 		<div className={layout.row}>
-			<AudioConsumer>
-				{({ audioCtx, createAudioCtx }) => (
-					<button
-						style={{ width: "100%" }}
-						onClick={() => handleToggle()} 
-						aria-label='start-stop'
-					>
-						{isPlaying ? "Stop" : "Start"}
-					</button>
-				)}
-			</AudioConsumer>
+			<button style={{ width: "100%" }} onClick={() => handleToggle()} aria-label='start-stop'>
+				{isPlaying ? "Stop" : "Start"}
+			</button>
 		</div>
 	);
 }

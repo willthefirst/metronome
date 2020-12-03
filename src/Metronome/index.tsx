@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import layout from "../styles/layout.module.scss";
 import BPM from "./BPM";
 import Conductor from "./Conductor";
@@ -18,12 +18,17 @@ let settings = {
 	isPlaying: false,
 	bpm: 88,
 	beats: defaultBeats,
-	currentBeatIndex: 0
+	currentBeatIndex: 1
 };
+
+let audioCtx: AudioContext | undefined = undefined;
 
 function Metronome() {
 	const [isPlaying, setPlaying] = useState(settings.isPlaying);
-	let audioCtx = undefined;
+
+	useEffect(() => {
+		isPlaying ? start() : stop();
+	});
 
 	async function setupSamples(audioContext: AudioContext): Promise<AudioBuffer[]> {
 		const samples = [`click.wav`, `accent.wav`];
@@ -37,42 +42,38 @@ function Metronome() {
 		return audioBuffers;
 	}
 
-	const start = () => {
-		// Load samples if necessary
-				// We initialize WebAudio here because browsers require a user interaction in order to use WebAudio
+	const loadSamples = async (): Promise<AudioBufferSourceNode[]> => {
+		audioCtx = createContext();
+
+		const audioBuffers = await setupSamples(audioCtx);
+		const sources = audioBuffers.map((buffer) => {
+			const sampleSource = audioCtx!.createBufferSource();
+			sampleSource.buffer = buffer;
+			sampleSource.connect(audioCtx!.destination);
+			return sampleSource;
+		});
+		return sources;
+	};
+
+
+	const start = async () => {
+		let samples: void | AudioBufferSourceNode[] = [];
+		// Initialize audio if needed
 		if (!audioCtx) {
-			audioCtx = createAudioCtx();
-			return;
+			samples = await loadSamples();
 		}
 
-		// Toggle playing state
-		setPlaying(!playing);
+		samples[1].start();
 
-		setupSamples(audioCtx)
-			.then((audioBuffers) => {
-				// This code should get moved...this is for playing the sounds
-				// Right now, it just maps through all the sounds and plays them.
-				const sources = audioBuffers.map((buffer) => {
-					const sampleSource = audioCtx!.createBufferSource();
-					sampleSource.buffer = buffer;
-					sampleSource.connect(audioCtx!.destination);
-					sampleSource.start();
-					return sampleSource;
-				});
-				return sources;
-			})
-			 .catch((error) => console.log(error));
-			 
 		// Update state progressively
-	}	
+	};
 
 	const stop = () => {
 		// Stop this shit
-	}
+	};
 
 	const handlePlayToggle = async () => {
 		setPlaying(!isPlaying);
-		isPlaying ? start() : stop();
 	};
 
 	return (
