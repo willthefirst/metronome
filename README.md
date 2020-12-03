@@ -5,6 +5,7 @@
     - [x] Write a test for the start/stop button
     - [ ] Use WebAudio to get a click going
         - [x] First, figure out how you'll want to work with audiocontext via play/pause.
+        - Maybe submit a PR to have them clarify this (Is it passed in from a parent via props? If so, it probably isn’t state.)
         - [ ] Next up: https://reactjs.org/docs/thinking-in-react.html#step-3-identify-the-minimal-but-complete-representation-of-ui-state
         - [WebAudio resource](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Advanced_techniques#Playing_the_audio_in_time)
         - We now can play sounds.
