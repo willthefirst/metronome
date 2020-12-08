@@ -87,34 +87,27 @@ function Metronome() {
 		const currentTime = audioCtx!.currentTime;
 
 		// While there are notes that will need to play before the next interval, schedule them and advance the pointer.
-		while (nextBeatTime < currentTime + scheduleAheadTime) {
-			const nextBeatTime_ = nextBeatTime;
-			// seems like things aren't updating here...
-			const currentBeat_ = currentBeat;
-			console.log(currentBeat_)
-			scheduleNote(currentBeat_, nextBeatTime_);
-			nextBeatTime = getNextNoteTime(currentTime);
-		}
+		setCurrentBeat((prevBeat) => {
+			while (nextBeatTime < currentTime + scheduleAheadTime) {
+				scheduleNote(prevBeat, nextBeatTime);
+				nextBeatTime = getNextNoteTime(currentTime);
+				return prevBeat;
+			}
+			return prevBeat;
+		});
 
 		timerID = window.setTimeout(scheduler, lookahead);
 	}
 
 	function draw() {
 		const currentTime = audioCtx!.currentTime;
-		let currentBeat_ = currentBeat - 1;
-		let nextNote = currentBeat;
 
+		// Fires when there are notes that need to be played
 		while (notesInQueue.length && notesInQueue[0].time < currentTime) {
-			nextNote = notesInQueue[0].note;
 			notesInQueue.splice(0, 1); // remove note from queue
-			
+
 			setCurrentBeat((prevBeat) => {
-				let currentBeat_ = prevBeat - 1;
-				let nextNote = prevBeat;
-				if (nextNote !== currentBeat_) {
-					return nextBeat(nextNote)
-				}
-				return prevBeat
+				return nextBeat(prevBeat);
 			});
 		}
 
