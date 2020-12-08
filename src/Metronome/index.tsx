@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import layout from "../styles/layout.module.scss";
 import BPM from "./BPM";
 import Conductor from "./Conductor";
 import PlayButton from "./PlayButton";
 import { AudioProvider } from "./AudioContext";
 import { BeatState } from "./Beat";
-import { SSL_OP_SSLEAY_080_CLIENT_DH_BUG } from "constants";
 
 function createContext(): AudioContext {
 	const AudioCtx = window.AudioContext;
@@ -132,13 +131,14 @@ function Metronome() {
 	};
 
 	const handlePlayToggle = async () => {
-		setCurrentBeat(-1);
+		if (isPlaying) {
+			setCurrentBeat(-1);
+			stop();
+		} else {
+			start();
+		}
 		setPlaying(!isPlaying);
 	};
-
-	useEffect(() => {
-		isPlaying ? start() : stop();
-	}, [isPlaying]);
 
 	return (
 		<div className={layout.container}>
