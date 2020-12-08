@@ -23,8 +23,8 @@ let settings = {
 
 let audioCtx: AudioContext | undefined = undefined;
 let nextBeatTime: number = 0;
-let timerID: number | undefined;
-let lookahead = 100.0; // How frequently to call scheduling function (in milliseconds)
+let timerID: NodeJS.Timeout;
+let lookahead = 20.0; // How frequently to call scheduling function (in milliseconds)
 let scheduleAheadTime = 0.1; // How far ahead to schedule audio (sec)
 const notesInQueue: { note: number; time: number }[] = [];
 
@@ -98,7 +98,7 @@ function Metronome() {
 	useEffect(() => {
 		function scheduler() {
 			const currentTime = audioCtx!.currentTime;
-
+			console.log(bpm);
 			// While there are notes that will need to play before the next interval, schedule them and advance the pointer.
 			setCurrentBeat((prevBeat) => {
 				while (nextBeatTime < currentTime + scheduleAheadTime) {
@@ -109,7 +109,7 @@ function Metronome() {
 				return prevBeat;
 			});
 
-			timerID = window.setTimeout(scheduler, lookahead);
+			timerID = setTimeout(scheduler, lookahead);
 		}
 
 		function pollForBeat() {
@@ -121,7 +121,6 @@ function Metronome() {
 				notesInQueue.splice(0, 1); // remove note from queue
 			}
 
-
 			requestAnimationFrame(pollForBeat);
 		}
 
@@ -129,11 +128,16 @@ function Metronome() {
 			scheduler();
 			requestAnimationFrame(pollForBeat);
 		}
+
+		return () => {
+			stop();
+		}
 		
 	}, [isPlaying, beats, bpm]);
 
 	const stop = () => {
-		window.clearTimeout(timerID);
+		console.log("stopped", timerID);
+		clearTimeout(timerID);
 	};
 
 	const handlePlayToggle = async () => {
