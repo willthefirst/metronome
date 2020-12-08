@@ -117,6 +117,7 @@ function Metronome() {
 
 			// Fires when there are notes that need to be played
 			while (notesInQueue.length && notesInQueue[0].time < currentTime) {
+				console.log(notesInQueue[0].note);
 				setCurrentBeat(notesInQueue[0].note);
 				notesInQueue.splice(0, 1); // remove note from queue
 			}
@@ -141,7 +142,7 @@ function Metronome() {
 			setCurrentBeat(-1);
 			stop();
 		} else {
-			start();
+			await start();
 		}
 		setPlaying(!isPlaying);
 	};
