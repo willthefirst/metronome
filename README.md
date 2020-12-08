@@ -5,9 +5,9 @@
     - [x] Write a test for the start/stop button
     - [ ] Use WebAudio to get a click going
         - [x] First, figure out how you'll want to work with audiocontext via play/pause.
-        - [ ] Play accent on every first beat
-            - current bug is that because of the dependecy array iin `useEffect()`, we're not updating current beat
-        - [ ] Organize functions/code-splitting
+        - [x] Play accent on every first beat
+        - [] Hook up bpm
+        - [ ] Refactor the timer code. Organize functions/code-splitting.
         - [ ] Current beat is highlitted visually
         - [ ] Hook up gain nodes to sliders
 - [ ] Polish UI
