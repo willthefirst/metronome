@@ -5,6 +5,7 @@ import Conductor from "./Conductor";
 import PlayButton from "./PlayButton";
 import { AudioProvider } from "./AudioContext";
 import { BeatState } from "./Beat";
+import { SSL_OP_SSLEAY_080_CLIENT_DH_BUG } from "constants";
 
 function createContext(): AudioContext {
 	const AudioCtx = window.AudioContext;
@@ -18,7 +19,7 @@ let settings = {
 	isPlaying: false,
 	bpm: 88,
 	beats: defaultBeats,
-	currentBeat: 0
+	currentBeat: -1
 };
 
 let audioCtx: AudioContext | undefined = undefined;
@@ -67,7 +68,7 @@ function Metronome() {
 
 	function nextBeat(prevBeat: number): number {
 		// Advance the beat number, wrap to zero
-		if (prevBeat >= beats.length - 1) {
+		if (prevBeat >= beats.length - 1 || prevBeat === -1) {
 			return 0;
 		} else {
 			return prevBeat + 1;
@@ -131,6 +132,7 @@ function Metronome() {
 	};
 
 	const handlePlayToggle = async () => {
+		setCurrentBeat(-1);
 		setPlaying(!isPlaying);
 	};
 
