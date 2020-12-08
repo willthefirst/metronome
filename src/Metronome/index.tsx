@@ -18,27 +18,23 @@ let settings = {
 	isPlaying: false,
 	bpm: 88,
 	beats: defaultBeats,
-	currentBeatIndex: 0
+	currentBeat: 0
 };
 
 let audioCtx: AudioContext | undefined = undefined;
-let samples: AudioBufferSourceNode[] = [];
 let nextBeatTime: number = 0;
-const notesInQueue: { note: number; time: number }[] = [];
 let timerID: number | undefined;
-// Update state progressively
-let lookahead = 25.0; // How frequently to call scheduling function (in milliseconds)
+let lookahead = 100.0; // How frequently to call scheduling function (in milliseconds)
 let scheduleAheadTime = 0.1; // How far ahead to schedule audio (sec)
+const notesInQueue: { note: number; time: number }[] = [];
 
 let audioBuffers: [] | AudioBuffer[] = [];
 
 function Metronome() {
 	const [isPlaying, setPlaying] = useState(settings.isPlaying);
-	const [bpm, setBPM] = useState(settings.bpm);
-	const [currentBeatIndex, setCurrentBeat] = useState(settings.currentBeatIndex);
-	const [beats, setBeats] = useState(settings.beats);
-
-	console.log(`Top level: ${currentBeatIndex}`);
+	const [bpm] = useState(settings.bpm);
+	const [currentBeat, setCurrentBeat] = useState(settings.currentBeat);
+	const [beats] = useState(settings.beats);
 
 	async function setupSamples(audioContext: AudioContext): Promise<AudioBuffer[]> {
 		const samples = [`click.wav`, `accent.wav`];
@@ -57,19 +53,19 @@ function Metronome() {
 		audioBuffers = await setupSamples(audioCtx);
 	};
 
-	const playSound = (buffer: AudioBuffer | null) => {
+	const playSoundAtTime = (buffer: AudioBuffer | null, time: number) => {
 		const sampleSource = audioCtx!.createBufferSource();
 		sampleSource.buffer = buffer;
 		sampleSource.connect(audioCtx!.destination);
-		sampleSource.start();
-		return sampleSource;
+		sampleSource.start(time);
 	};
 
-	function incrementBeat(prevBeat: number) {
+	function getNextNoteTime(currTime: number) {
 		const secondsPerBeat = 60.0 / bpm;
+		return currTime + secondsPerBeat;
+	}
 
-		nextBeatTime += secondsPerBeat; // Add beat length to last beat time
-
+	function nextBeat(prevBeat: number): number {
 		// Advance the beat number, wrap to zero
 		if (prevBeat >= beats.length - 1) {
 			return 0;
@@ -79,29 +75,53 @@ function Metronome() {
 	}
 
 	function scheduleNote(beatNumber: number, time: number) {
-		// push the note on the queue, even if we're not playing.
 		notesInQueue.push({ note: beatNumber, time: time });
 		if (beatNumber === 0) {
-			playSound(audioBuffers[1]); // beat sound
+			playSoundAtTime(audioBuffers[1], time); // beat sound
 		} else {
-			playSound(audioBuffers[0]); // accent sound
+			playSoundAtTime(audioBuffers[0], time); // accent sound
 		}
 	}
 
 	function scheduler() {
+		const currentTime = audioCtx!.currentTime;
+
 		// While there are notes that will need to play before the next interval, schedule them and advance the pointer.
-		while (nextBeatTime < audioCtx!.currentTime + scheduleAheadTime) {
-			let nextBeatTime_ = nextBeatTime;
-			setCurrentBeat((prevBeat) => {
-				scheduleNote(prevBeat, nextBeatTime_);
-				return incrementBeat(prevBeat);
-			});
+		while (nextBeatTime < currentTime + scheduleAheadTime) {
+			const nextBeatTime_ = nextBeatTime;
+			// seems like things aren't updating here...
+			const currentBeat_ = currentBeat;
+			console.log(currentBeat_)
+			scheduleNote(currentBeat_, nextBeatTime_);
+			nextBeatTime = getNextNoteTime(currentTime);
 		}
+
 		timerID = window.setTimeout(scheduler, lookahead);
 	}
 
+	function draw() {
+		const currentTime = audioCtx!.currentTime;
+		let currentBeat_ = currentBeat - 1;
+		let nextNote = currentBeat;
+
+		while (notesInQueue.length && notesInQueue[0].time < currentTime) {
+			nextNote = notesInQueue[0].note;
+			notesInQueue.splice(0, 1); // remove note from queue
+			
+			setCurrentBeat((prevBeat) => {
+				let currentBeat_ = prevBeat - 1;
+				let nextNote = prevBeat;
+				if (nextNote !== currentBeat_) {
+					return nextBeat(nextNote)
+				}
+				return prevBeat
+			});
+		}
+
+		requestAnimationFrame(draw);
+	}
+
 	const start = async () => {
-		console.log("Start");
 		// Initialize audio if needed
 		if (!audioCtx) {
 			await loadSamples();
@@ -112,6 +132,7 @@ function Metronome() {
 
 		nextBeatTime = audioCtx!.currentTime;
 		scheduler();
+		requestAnimationFrame(draw);
 	};
 
 	const stop = () => {
@@ -123,7 +144,6 @@ function Metronome() {
 	};
 
 	useEffect(() => {
-		console.log("effect!");
 		isPlaying ? start() : stop();
 	}, [isPlaying]);
 
@@ -135,8 +155,8 @@ function Metronome() {
 					createAudioCtx: createContext
 				}}
 			>
-				<BPM value={settings.bpm} min={40} max={240} />
-				<Conductor beats={settings.beats} currentBeatIndex={settings.currentBeatIndex} />
+				<BPM value={bpm} min={40} max={240} />
+				<Conductor beats={beats} currentBeat={currentBeat} />
 				<PlayButton isPlaying={isPlaying} handleToggle={handlePlayToggle} />
 			</AudioProvider>
 		</div>

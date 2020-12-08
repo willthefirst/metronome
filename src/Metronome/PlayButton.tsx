@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import layout from "../styles/layout.module.scss";
-import { AudioConsumer } from "./AudioContext";
 
 type PlayButtonProps = {
 	isPlaying: boolean;

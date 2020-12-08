@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import layout from "../styles/layout.module.scss";
 import cx from "classnames";
 import Beat, { BeatState } from "./Beat";
@@ -6,37 +6,34 @@ import Beat, { BeatState } from "./Beat";
 type ConductorProps = {
 	className?: string;
 	beats: BeatState[];
-	currentBeatIndex: number;
+	currentBeat: number;
 };
 
-function Conductor({ className, beats, currentBeatIndex }: ConductorProps) {
-	const [playing, setPlaying] = useState();
-
-	let [beats_, setBeats] = useState(beats);
+function Conductor({ className, beats, currentBeat }: ConductorProps) {
 
 	const handleVolUpdate = (index: number, val: number) => {
-		let newBeats = [...beats_];
-		newBeats[index].volume = val;
-		setBeats(newBeats);
+		// let newBeats = [...beats_];
+		// newBeats[index].volume = val;
+		// setBeats(newBeats);
 	};
 
 	const handleAddBeat = () => {
-		let newBeats = beats_.slice();
-		newBeats.push({ volume: 50 });
-		setBeats(newBeats);
+		// let newBeats = beats_.slice();
+		// newBeats.push({ volume: 50 });
+		// setBeats(newBeats);
 	};
 
 	const handleRemoveBeat = () => {
-		setBeats(beats_.slice(0, beats_.length - 1));
+		// setBeats(beats_.slice(0, beats_.length - 1));
 	};
-
+	
 	return (
 		<div className={layout.row}>
 			<div className={cx(layout.flexCenter, layout.left)}>
 				{beats.map((beat: BeatState, key: number) => (
 					<Beat
 						volume={beat.volume}
-						isActive={key === currentBeatIndex}
+						isActive={key === currentBeat}
 						key={key}
 						onVolumeUpdate={(val) => handleVolUpdate(key, val)}
 					/>
