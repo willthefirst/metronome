@@ -6,7 +6,7 @@
     - [ ] Use WebAudio to get a click going
         - [x] First, figure out how you'll want to work with audiocontext via play/pause.
         - [x] Play accent on every first beat
-        - [] Hook up bpm
+        - [ ] Hook up bpm
         - [ ] Refactor the timer code. Organize functions/code-splitting.
         - [ ] Current beat is highlitted visually
         - [ ] Hook up gain nodes to sliders
