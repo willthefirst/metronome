@@ -66,8 +66,8 @@ async function setupSamples(audioContext: AudioContext): Promise<AudioBuffer[]> 
 	);
 	return audioBuffers;
 }
-
 const loadSamples = async () => {
+
 	audioCtx = createContext();
 	audioBuffers = await setupSamples(audioCtx);
 };
@@ -157,8 +157,8 @@ function Metronome() {
 					createAudioCtx: createContext
 				}}
 			>
-				<BPM value={bpm} min={40} max={240} handleChange={setBPM} />
 				<Conductor beats={beats} currentBeat={currentBeat} setBeats={setBeats} />
+				<BPM value={bpm} min={40} max={240} handleChange={setBPM} />
 				<PlayButton isPlaying={isPlaying} handleToggle={handlePlayToggle} />
 			</AudioProvider>
 		</div>

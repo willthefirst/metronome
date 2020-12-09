@@ -35,17 +35,6 @@ function BPM({ className, value, min, max, handleChange }: BPMProps) {
 					ariaLabelForHandle='bpm-slider'
 				/>
 			</div>
-			<div className={cx(layout.flexCenter, layout.right)}>
-				<button
-					aria-label='increase-4-bpm'
-					onClick={() => handleChange(keepInRange(value + 4, min, max))}
-				>
-					+4 bpm
-				</button>
-				<button aria-label='decrease-4-bpm' onClick={() => handleChange(keepInRange(value - 4, min, max))}>
-					-4 bpm
-				</button>
-			</div>
 		</div>
 	);
 }
