@@ -98,7 +98,6 @@ function Metronome() {
 	useEffect(() => {
 		function scheduler() {
 			const currentTime = audioCtx!.currentTime;
-			console.log(bpm);
 			// While there are notes that will need to play before the next interval, schedule them and advance the pointer.
 			setCurrentBeat((prevBeat) => {
 				while (nextBeatTime < currentTime + scheduleAheadTime) {
@@ -130,19 +129,14 @@ function Metronome() {
 		}
 
 		return () => {
-			stop();
+			clearTimeout(timerID);
 		}
 		
 	}, [isPlaying, beats, bpm]);
 
-	const stop = () => {
-		clearTimeout(timerID);
-	};
-
 	const handlePlayToggle = async () => {
 		if (isPlaying) {
 			setCurrentBeat(-1);
-			stop();
 		} else {
 			await start();
 		}

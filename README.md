@@ -6,9 +6,9 @@
     - [ ] Use WebAudio to get a click going
         - [x] First, figure out how you'll want to work with audiocontext via play/pause.
         - [x] Play accent on every first beat
-        - [ ] Hook up bpm
+        - [x] Hook up bpm
         - [ ] Refactor the timer code. Organize functions/code-splitting.
-        - [ ] Current beat is highlitted visually
+        - [x] Current beat is highlitted visually
         - [ ] Hook up gain nodes to sliders
 - [ ] Polish UI
     - [ ] Move colors somewhere sensible
@@ -20,6 +20,7 @@
     - [x] Beats
         - [x] Beats are all same base color,
         - [x] When a beat is active, it "highlighted in the active color"
+- [ ] Sometimes the beat doesn't reset to -1
 - [ ] `findDOMNode` issue with rc-slider...fork and pull?
 - [ ] Minimum beats = 1
 - [ ] Slider UI: *maybe* opacity changes with velocity
