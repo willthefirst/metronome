@@ -1,6 +1,5 @@
 import React from "react";
 import InputRange from "./InputRange";
-import style from "../styles/bpm.module.scss";
 import layout from "../styles/layout.module.scss";
 import cx from "classnames";
 import color from "../styles/color"

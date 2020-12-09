@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import layout from "../styles/layout.module.scss";
 import BPM from "./BPM";
 import Conductor from "./Conductor";
@@ -72,7 +72,7 @@ const loadSamples = async () => {
 	audioBuffers = await setupSamples(audioCtx);
 };
 
-function nextBeat(prevBeat: number, beats: BeatState[]): number {
+function nextBeat(prevBeat: any, beats: BeatState[]): number {
 	// Advance the beat number, wrap to zero
 	if (prevBeat >= beats.length - 1 || prevBeat === -1) {
 		return 0;
@@ -83,10 +83,11 @@ function nextBeat(prevBeat: number, beats: BeatState[]): number {
 
 function Metronome() {
 	const [isPlaying, setPlaying] = useState(settings.isPlaying);
-	const [bpm, setBPM] = useState(settings.bpm);
+	const isPlayingRef = useRef(settings.isPlaying); // to handle stale closure issue
 	const [currentBeat, setCurrentBeat] = useState(settings.currentBeat);
+	const currentBeatRef = useRef(settings.currentBeat); // to handle stale closure issue
+	const [bpm, setBPM] = useState(settings.bpm);
 	const [beats, setBeats] = useState(settings.beats);
-
 	const start = async () => {
 		// Initialize audio if needed
 		if (!audioCtx) {
@@ -102,18 +103,15 @@ function Metronome() {
 	useEffect(() => {
 		function scheduler() {
 			const currentTime = audioCtx!.currentTime;
-			// While there are notes that will need to play before the next interval, schedule them and advance the pointer.
-			setCurrentBeat((prevBeat) => {
-				while (nextBeatTime < currentTime + scheduleAheadTime) {
-					const beatIndex = nextBeat(prevBeat, beats);
-					const volume = beats[beatIndex].volume;
 
-					scheduleNote(beatIndex, volume, nextBeatTime);
-					nextBeatTime = getNextNoteTime(currentTime, bpm);
-					return prevBeat;
-				}
-				return prevBeat;
-			});
+			// While there are notes that will need to play before the next interval, schedule them and advance the pointer.
+			while (nextBeatTime < currentTime + scheduleAheadTime) {
+				const beatIndex = nextBeat(currentBeatRef.current, beats);
+				const volume = beats[beatIndex].volume;
+
+				scheduleNote(beatIndex, volume, nextBeatTime);
+				nextBeatTime = getNextNoteTime(currentTime, bpm);
+			}
 
 			timerID = setTimeout(scheduler, lookahead);
 		}
@@ -123,14 +121,19 @@ function Metronome() {
 
 			// Fires when there are notes that need to be played
 			while (notesInQueue.length && notesInQueue[0].time < currentTime) {
-				setCurrentBeat(notesInQueue[0].note);
+				currentBeatRef.current = notesInQueue[0].note
+				setCurrentBeat(currentBeatRef.current);
 				notesInQueue.splice(0, 1); // remove note from queue
+			}
+
+			if (!isPlayingRef.current) {
+				return;
 			}
 
 			requestAnimationFrame(pollForBeat);
 		}
 
-		if (isPlaying) {
+		if (isPlayingRef.current) {
 			scheduler();
 			requestAnimationFrame(pollForBeat);
 		}
@@ -140,13 +143,20 @@ function Metronome() {
 		};
 	}, [isPlaying, beats, bpm]);
 
+	const stopAndReset = () => {
+		notesInQueue.splice(0);
+		currentBeatRef.current = -1;
+		setCurrentBeat(currentBeatRef.current);
+	};
+
 	const handlePlayToggle = async () => {
 		if (isPlaying) {
-			setCurrentBeat(-1);
+			stopAndReset();
 		} else {
 			await start();
 		}
-		setPlaying(!isPlaying);
+		isPlayingRef.current = !isPlayingRef.current;
+		setPlaying(isPlayingRef.current);
 	};
 
 	return (
