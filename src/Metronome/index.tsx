@@ -24,7 +24,7 @@ let settings = {
 let audioCtx: AudioContext | undefined = undefined;
 let nextBeatTime: number = 0;
 let timerID: NodeJS.Timeout;
-let lookahead = 20.0; // How frequently to call scheduling function (in milliseconds)
+let lookahead = 25.0; // How frequently to call scheduling function (in milliseconds)
 let scheduleAheadTime = 0.1; // How far ahead to schedule audio (sec)
 const notesInQueue: { note: number; time: number }[] = [];
 
@@ -136,7 +136,6 @@ function Metronome() {
 	}, [isPlaying, beats, bpm]);
 
 	const stop = () => {
-		console.log("stopped", timerID);
 		clearTimeout(timerID);
 	};
 
