@@ -14,7 +14,7 @@ type BPMProps = {
 
 function BPM({ className, value, min, max, handleChange }: BPMProps) {
 	return (
-		<div className={cx(layout.flexCenter, layout.left)}>
+		<div className={cx(layout.flexCenter)}>
 			<span className={style.numDisplay}>{value}</span>
 			<InputRange
 				value={value}

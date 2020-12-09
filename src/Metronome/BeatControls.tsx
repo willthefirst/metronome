@@ -21,7 +21,7 @@ function BeatControls({ className, beats, setBeats }: BeatControlsProps) {
 	};
 
 	return (
-		<div className={cx(layout.flexCenter, layout.right)}>
+		<div className={cx(layout.flexCenter)}>
 			<button aria-label='add-beat' onClick={handleAddBeat}>
 				+ beat
 			</button>
