@@ -3,8 +3,9 @@ import layout from "../styles/layout.module.scss";
 import BPM from "./BPM";
 import Conductor from "./Conductor";
 import PlayButton from "./PlayButton";
-import { AudioProvider } from "./AudioContext";
+import Row from "./Row";
 import { BeatState } from "./Beat";
+import BeatControls from "./BeatControls";
 
 function createContext(): AudioContext {
 	const AudioCtx = window.AudioContext;
@@ -49,7 +50,7 @@ const playSoundAtTime = (buffer: AudioBuffer | null, volume: number, time: numbe
 	const gainNode = audioCtx!.createGain();
 	sampleSource.buffer = buffer;
 	gainNode.gain.value = volume / 100;
-	
+
 	sampleSource.connect(gainNode);
 	gainNode.connect(audioCtx!.destination);
 	sampleSource.start(time);
@@ -67,7 +68,6 @@ async function setupSamples(audioContext: AudioContext): Promise<AudioBuffer[]> 
 	return audioBuffers;
 }
 const loadSamples = async () => {
-
 	audioCtx = createContext();
 	audioBuffers = await setupSamples(audioCtx);
 };
@@ -75,7 +75,7 @@ const loadSamples = async () => {
 function nextBeat(prevBeat: number, beats: BeatState[]): number {
 	// Advance the beat number, wrap to zero
 	if (prevBeat >= beats.length - 1 || prevBeat === -1) {
-		return 0
+		return 0;
 	} else {
 		return prevBeat + 1;
 	}
@@ -151,16 +151,18 @@ function Metronome() {
 
 	return (
 		<div className={layout.container}>
-			<AudioProvider
-				value={{
-					audioCtx: undefined,
-					createAudioCtx: createContext
-				}}
-			>
+			<Row height={3}>
 				<Conductor beats={beats} currentBeat={currentBeat} setBeats={setBeats} />
+			</Row>
+			<Row height={1}>
+				<BeatControls beats={beats} setBeats={setBeats} />
+			</Row>
+			<Row height={1}>
 				<BPM value={bpm} min={40} max={240} handleChange={setBPM} />
+			</Row>
+			<Row height={1}>
 				<PlayButton isPlaying={isPlaying} handleToggle={handlePlayToggle} />
-			</AudioProvider>
+			</Row>
 		</div>
 	);
 }

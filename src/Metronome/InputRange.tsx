@@ -2,6 +2,7 @@ import * as React from "react";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import "../styles/input.scss";
+import color from "../styles/color";
 
 type InputRangeProps = {
 	vertical?: boolean;
@@ -11,25 +12,18 @@ type InputRangeProps = {
 	on?: boolean;
 	onChange: (val: number) => void;
 	ariaLabelForHandle: string;
+	// handle?: Function
 };
 
 function InputRange(props: InputRangeProps) {
-	let color = {
-		primaryLightest: "#f1faee",
-		primaryLight: "#a8dadc",
-		primaryMedium: "#457b9d",
-		primaryDark: "#1d3557",
-		accent: "e63946"
-	};
-
 	return (
 		<Slider
 			trackStyle={{
-				backgroundColor: props.on ? color.primaryDark :color.primaryLight,
+				backgroundColor: props.on ? color.primaryDark : color.primaryLight,
 				width: "100%",
 				height: "100%",
 				left: 0,
-				borderRadius: 0
+				borderRadius: 0,
 			}}
 			handleStyle={{
 				height: 0,
@@ -41,7 +35,8 @@ function InputRange(props: InputRangeProps) {
 				backgroundColor: props.on ? color.primaryMedium : color.primaryLightest,
 				width: "100%",
 				height: "100%",
-				borderRadius: 0
+				borderRadius: 0,
+
 			}}
 			{...props}
 		/>
