@@ -2,6 +2,7 @@ import * as React from "react";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import "../styles/input.scss";
+import color from "../styles/color";
 
 type InputRangeProps = {
 	vertical?: boolean;
@@ -14,14 +15,6 @@ type InputRangeProps = {
 };
 
 function InputRange(props: InputRangeProps) {
-	let color = {
-		primaryLightest: "#f1faee",
-		primaryLight: "#a8dadc",
-		primaryMedium: "#457b9d",
-		primaryDark: "#1d3557",
-		accent: "e63946"
-	};
-
 	return (
 		<Slider
 			trackStyle={{

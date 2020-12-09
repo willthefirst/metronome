@@ -2,6 +2,8 @@
 
 ## Todo
 - [ ] Make a pretty UI
+    - [ ] Button styling
+    - [x] Color themes
 - [ ] Reorganize with code-splitting recs from react docs
 - [ ] Refactor the timer code. Organize functions/code-splitting.
 - [ ] Sometimes the beat doesn't reset to -1

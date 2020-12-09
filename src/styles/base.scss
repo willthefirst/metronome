@@ -5,8 +5,9 @@ html {
 body {
   margin: 0;
   height: 100%;
-  font-family: sans-serif;
+  font-family: serif;
   font-size: 40px;
+  color: #aaa;
 }
 
 #root {
@@ -18,5 +19,8 @@ button {
   padding: 0;
   border: none;
   height: 100%;
-  // appearance: none;
+  font-size: 1em;
+  text-transform: uppercase;
+  font-family: inherit;
+  color: inherit;
 }
