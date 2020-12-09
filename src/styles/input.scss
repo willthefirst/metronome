@@ -1,5 +1,3 @@
-@import "variables";
-
 /* Modifications to rc-slider  */
 .rc-slider {
 	padding: 0;
@@ -17,4 +15,8 @@
 	.rc-slider-handle {
 		width: 100%;
 	}
+}
+
+.rc-slider-mark {
+	display: none;
 }
