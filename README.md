@@ -8,9 +8,8 @@
         - [x] Play accent on every first beat
         - [x] Hook up bpm
         - [x] Current beat is highlitted visually
-        - [ ] Adding/subtracting beats works.
-        - [ ] Hook up gain nodes to sliders
-        - [ ] Refactor the timer code. Organize functions/code-splitting.
+        - [x] Adding/subtracting beats works.
+        - [x] Hook up gain nodes to sliders
 - [ ] Polish UI
     - [ ] Move colors somewhere sensible
     - [ ] BIG bpm text
@@ -21,6 +20,7 @@
     - [x] Beats
         - [x] Beats are all same base color,
         - [x] When a beat is active, it "highlighted in the active color"
+- [ ] Refactor the timer code. Organize functions/code-splitting.
 - [ ] Sometimes the beat doesn't reset to -1
 - [ ] `findDOMNode` issue with rc-slider...fork and pull?
 - [ ] Minimum beats = 1

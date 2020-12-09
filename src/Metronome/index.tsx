@@ -35,19 +35,23 @@ const getNextNoteTime = (currTime: number, bpm: number) => {
 	return currTime + secondsPerBeat;
 };
 
-function scheduleNote(beatNumber: number, time: number) {
-	notesInQueue.push({ note: beatNumber, time: time });
-	if (beatNumber === 0) {
-		playSoundAtTime(audioBuffers[1], time); // beat sound
+function scheduleNote(currentBeat: number, volume: number, time: number) {
+	notesInQueue.push({ note: currentBeat, time: time });
+	if (currentBeat === 0) {
+		playSoundAtTime(audioBuffers[1], volume, time); // beat sound
 	} else {
-		playSoundAtTime(audioBuffers[0], time); // accent sound
+		playSoundAtTime(audioBuffers[0], volume, time); // accent sound
 	}
 }
 
-const playSoundAtTime = (buffer: AudioBuffer | null, time: number) => {
+const playSoundAtTime = (buffer: AudioBuffer | null, volume: number, time: number) => {
 	const sampleSource = audioCtx!.createBufferSource();
+	const gainNode = audioCtx!.createGain();
 	sampleSource.buffer = buffer;
-	sampleSource.connect(audioCtx!.destination);
+	gainNode.gain.value = volume / 100;
+	
+	sampleSource.connect(gainNode);
+	gainNode.connect(audioCtx!.destination);
 	sampleSource.start(time);
 };
 
@@ -68,10 +72,10 @@ const loadSamples = async () => {
 	audioBuffers = await setupSamples(audioCtx);
 };
 
-function nextBeat(prevBeat: number, numBeats: number): number {
+function nextBeat(prevBeat: number, beats: BeatState[]): number {
 	// Advance the beat number, wrap to zero
-	if (prevBeat >= numBeats || prevBeat === -1) {
-		return 0;
+	if (prevBeat >= beats.length - 1 || prevBeat === -1) {
+		return 0
 	} else {
 		return prevBeat + 1;
 	}
@@ -101,7 +105,10 @@ function Metronome() {
 			// While there are notes that will need to play before the next interval, schedule them and advance the pointer.
 			setCurrentBeat((prevBeat) => {
 				while (nextBeatTime < currentTime + scheduleAheadTime) {
-					scheduleNote(nextBeat(prevBeat, beats.length - 1), nextBeatTime);
+					const beatIndex = nextBeat(prevBeat, beats);
+					const volume = beats[beatIndex].volume;
+
+					scheduleNote(beatIndex, volume, nextBeatTime);
 					nextBeatTime = getNextNoteTime(currentTime, bpm);
 					return prevBeat;
 				}
@@ -130,8 +137,7 @@ function Metronome() {
 
 		return () => {
 			clearTimeout(timerID);
-		}
-		
+		};
 	}, [isPlaying, beats, bpm]);
 
 	const handlePlayToggle = async () => {
