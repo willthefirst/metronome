@@ -81,7 +81,7 @@ function Metronome() {
 	const [isPlaying, setPlaying] = useState(settings.isPlaying);
 	const [bpm, setBPM] = useState(settings.bpm);
 	const [currentBeat, setCurrentBeat] = useState(settings.currentBeat);
-	const [beats] = useState(settings.beats);
+	const [beats, setBeats] = useState(settings.beats);
 
 	const start = async () => {
 		// Initialize audio if needed
@@ -152,7 +152,7 @@ function Metronome() {
 				}}
 			>
 				<BPM value={bpm} min={40} max={240} handleChange={setBPM} />
-				<Conductor beats={beats} currentBeat={currentBeat} />
+				<Conductor beats={beats} currentBeat={currentBeat} setBeats={setBeats} />
 				<PlayButton isPlaying={isPlaying} handleToggle={handlePlayToggle} />
 			</AudioProvider>
 		</div>

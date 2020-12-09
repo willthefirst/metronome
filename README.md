@@ -7,9 +7,10 @@
         - [x] First, figure out how you'll want to work with audiocontext via play/pause.
         - [x] Play accent on every first beat
         - [x] Hook up bpm
-        - [ ] Refactor the timer code. Organize functions/code-splitting.
         - [x] Current beat is highlitted visually
+        - [ ] Adding/subtracting beats works.
         - [ ] Hook up gain nodes to sliders
+        - [ ] Refactor the timer code. Organize functions/code-splitting.
 - [ ] Polish UI
     - [ ] Move colors somewhere sensible
     - [ ] BIG bpm text

@@ -7,24 +7,25 @@ type ConductorProps = {
 	className?: string;
 	beats: BeatState[];
 	currentBeat: number;
+	setBeats: Function;
 };
 
-function Conductor({ className, beats, currentBeat }: ConductorProps) {
+function Conductor({ className, beats, currentBeat, setBeats }: ConductorProps) {
 
 	const handleVolUpdate = (index: number, val: number) => {
-		// let newBeats = [...beats_];
-		// newBeats[index].volume = val;
-		// setBeats(newBeats);
+		let newBeats = [...beats];
+		newBeats[index].volume = val;
+		setBeats(newBeats);
 	};
 
 	const handleAddBeat = () => {
-		// let newBeats = beats_.slice();
-		// newBeats.push({ volume: 50 });
-		// setBeats(newBeats);
+		let newBeats = beats.slice();
+		newBeats.push({ volume: 50 });
+		setBeats(newBeats);
 	};
 
 	const handleRemoveBeat = () => {
-		// setBeats(beats_.slice(0, beats_.length - 1));
+		setBeats(beats.slice(0, beats.length - 1));
 	};
 	
 	return (
