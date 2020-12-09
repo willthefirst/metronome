@@ -1,21 +1,39 @@
-# Marionome
+# Metronome
 
 ## Todo
-- test change
-- [ ] Hook up range components
-- [ ] Finish UI
-    - [ ] Conductor component
-        - [x] Light at top
-        - [x] Draggable range component below each
-        - [ ] First beat (accent) gets a different sound/color
-            - [ ] Gradient fills
-    - [ ] Tempo component
-        - [ ] Draggable tempo section
-        - [ ] +/- 4 bpms section.
-    - [ ] Button components
-    - [x] Create a custom draggable range component
-        - [x] Directions
-- [ ] Write the backend (with tests!)
+- [ ] MVP: get beats working    
+    - [x] Write a test for the start/stop button
+    - [ ] Use WebAudio to get a click going
+        - [x] First, figure out how you'll want to work with audiocontext via play/pause.
+        - [x] Play accent on every first beat
+        - [x] Hook up bpm
+        - [x] Current beat is highlitted visually
+        - [x] Adding/subtracting beats works.
+        - [x] Hook up gain nodes to sliders
+- [ ] Polish UI
+    - [ ] Move colors somewhere sensible
+    - [ ] BIG bpm text
+    - [ ] Consolidate buttons vertically
+    - [ ] Add stop/start button
+    - [ ] First beat should look a bit different, always
+    - [ ] Clean up borders
+    - [x] Beats
+        - [x] Beats are all same base color,
+        - [x] When a beat is active, it "highlighted in the active color"
+- [ ] Refactor the timer code. Organize functions/code-splitting.
+- [ ] Sometimes the beat doesn't reset to -1
+- [ ] `findDOMNode` issue with rc-slider...fork and pull?
+- [ ] Minimum beats = 1
+- [ ] Slider UI: *maybe* opacity changes with velocity
+- [ ] Couldn't figure out how to unmount uncessary requestAnimationFrames.
+- [x] Hook up range components
+- [x] Review css modules with the new way that beats work.
+- [x] Start writing tests. Helpful tutorial: https://www.freecodecamp.org/news/8-simple-steps-to-start-testing-react-apps-using-react-testing-library-and-jest/#basics
+- [x] Hook up +/- buttons for bpm with tests.
+- [x] Hook up +/- buttons for conductor
+- [x] Write tests for conductor buttons etc.
+- [x] Uninstall range-slider
+- [x] aria labels for input ranges...get input ranges to actually work?
 
 ## Ideas
 - Many color schemes?
@@ -24,6 +42,9 @@
 - Using flexbox and css grids
 - Jest
 - Gitflow (https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
+
+## Resources
+- [Free Code Camp's tutorial on Jest](https://www.freecodecamp.org/news/8-simple-steps-to-start-testing-react-apps-using-react-testing-library-and-jest/#8-testing-http-request)
 
 # Getting Started with Create React App
 

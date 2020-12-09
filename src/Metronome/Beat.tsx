@@ -1,17 +1,29 @@
 import * as React from "react";
 import InputRange from "./InputRange";
-import BeatMarker from "./BeatMarker";
-import cx from "classnames";
+import style from "../styles/beat.module.scss";
 
-type BeatProps = {
-    className?: string;
+export interface BeatState {
+	volume: number;
 }
 
-function Beat({className}: BeatProps) {
+type BeatProps = {
+	volume: number;
+	isActive: boolean;
+	onVolumeUpdate: (val: number) => void;
+};
+
+function Beat({ volume, isActive, onVolumeUpdate }: BeatProps) {
 	return (
-		<div className={cx("beat", className)}>
-            <BeatMarker className={className} />
-			<InputRange orientation='vertical' />
+		<div className={style.beat}>
+			<InputRange
+				vertical={true}
+				value={volume}
+				min={0}
+				max={100}
+				on={isActive}
+				onChange={onVolumeUpdate}
+				ariaLabelForHandle='beat-slider'
+			/>
 		</div>
 	);
 }
