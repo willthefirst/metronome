@@ -12,9 +12,10 @@ function PlayButton({ isPlaying, handleToggle }: PlayButtonProps) {
 	const icon = isPlaying ? <ImStop2 style={{color: color.dangerDark}}/> : <ImPlay3 style={{color: color.successDark}}/>
 
 	return (
-		<button style={{ width: "100%", backgroundColor: bgc }} onClick={() => handleToggle()} aria-label='start-stop'>
+		<button style={{ width: "100%", backgroundColor: bgc }} onClick={() => handleToggle()} aria-label='start-stop' >
 			{icon}
 		</button>
+
 	);
 }
 

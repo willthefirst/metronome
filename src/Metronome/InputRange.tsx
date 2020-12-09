@@ -12,17 +12,18 @@ type InputRangeProps = {
 	on?: boolean;
 	onChange: (val: number) => void;
 	ariaLabelForHandle: string;
+	// handle?: Function
 };
 
 function InputRange(props: InputRangeProps) {
 	return (
 		<Slider
 			trackStyle={{
-				backgroundColor: props.on ? color.primaryDark :color.primaryLight,
+				backgroundColor: props.on ? color.primaryDark : color.primaryLight,
 				width: "100%",
 				height: "100%",
 				left: 0,
-				borderRadius: 0
+				borderRadius: 0,
 			}}
 			handleStyle={{
 				height: 0,
@@ -34,7 +35,8 @@ function InputRange(props: InputRangeProps) {
 				backgroundColor: props.on ? color.primaryMedium : color.primaryLightest,
 				width: "100%",
 				height: "100%",
-				borderRadius: 0
+				borderRadius: 0,
+
 			}}
 			{...props}
 		/>

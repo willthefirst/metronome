@@ -3,6 +3,7 @@ import InputRange from "./InputRange";
 import style from "../styles/bpm.module.scss";
 import layout from "../styles/layout.module.scss";
 import cx from "classnames";
+import color from "../styles/color"
 
 type BPMProps = {
 	className?: string;
@@ -13,9 +14,10 @@ type BPMProps = {
 };
 
 function BPM({ className, value, min, max, handleChange }: BPMProps) {
+	const numDisplay = <span style={{ position: "absolute", zIndex: 1, color: color.primaryDark }}>{value} bpm</span>;
 	return (
-		<div className={cx(layout.flexCenter)}>
-			<span className={style.numDisplay}>{value}</span>
+		<div className={cx(layout.flexCenter, layout.vertCenter)}>
+			{numDisplay}
 			<InputRange
 				value={value}
 				min={min}

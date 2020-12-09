@@ -2,6 +2,8 @@ import React from "react";
 import layout from "../styles/layout.module.scss";
 import cx from "classnames";
 import { BeatState } from "./Beat";
+import { ImMinus, ImPlus } from "react-icons/im";
+import color from "../styles/color"
 
 type BeatControlsProps = {
 	className?: string;
@@ -20,13 +22,18 @@ function BeatControls({ className, beats, setBeats }: BeatControlsProps) {
 		setBeats(beats.slice(0, beats.length - 1));
 	};
 
+	let btnStyle = {
+		backgroundColor: color.primaryLightest,
+		color: color.primaryDark
+	}
+
 	return (
 		<div className={cx(layout.flexCenter)}>
-			<button aria-label='add-beat' onClick={handleAddBeat}>
-				+ beat
+			<button aria-label='remove-beat' onClick={handleRemoveBeat} style={btnStyle}>
+				<ImMinus />
 			</button>
-			<button aria-label='remove-beat' onClick={handleRemoveBeat}>
-				- beat
+			<button aria-label='add-beat' onClick={handleAddBeat} style={btnStyle}>
+				<ImPlus />
 			</button>
 		</div>
 	);

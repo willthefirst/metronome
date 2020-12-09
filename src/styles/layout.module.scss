@@ -13,10 +13,17 @@
 	display: flex;
 	flex-grow: 1;
 	flex-direction: row;
-	align-items: stretch;
 	justify-content: space-around;
 
 	>* {
 		flex: auto;
 	}
+}
+
+.vertStretch {
+	align-items: stretch;
+}
+
+.vertCenter {
+	align-items: center;
 }

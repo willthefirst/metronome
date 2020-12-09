@@ -5,9 +5,8 @@ html {
 body {
   margin: 0;
   height: 100%;
-  font-family: serif;
-  font-size: 40px;
-  color: #aaa;
+  font-family: sans-serif;
+  font-size: 5vh;
 }
 
 #root {
@@ -23,4 +22,8 @@ button {
   text-transform: uppercase;
   font-family: inherit;
   color: inherit;
+
+  &:focus {
+    outline: none;
+  }
 }

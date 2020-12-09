@@ -1,9 +1,6 @@
 # Metronome
 
 ## Todo
-- [ ] Make a pretty UI
-    - [ ] Button styling
-    - [x] Color themes
 - [ ] Reorganize with code-splitting recs from react docs
 - [ ] Refactor the timer code. Organize functions/code-splitting.
 - [ ] Sometimes the beat doesn't reset to -1
@@ -29,6 +26,9 @@
         - [x] Current beat is highlitted visually
         - [x] Adding/subtracting beats works.
         - [x] Hook up gain nodes to sliders
+- [x] Make a pretty UI
+    - [x] Button styling
+    - [x] Color themes
 
 ## Ideas
 - Many color schemes?
