@@ -1,8 +1,17 @@
 # Metronome
 
 ## Todo
-- [ ] MVP: get beats working
+- [ ] MVP: get beats working    
+    - [x] Write a test for the start/stop button
+    - [ ] Use WebAudio to get a click going
+        - [x] First, figure out how you'll want to work with audiocontext via play/pause.
+        - [x] Play accent on every first beat
+        - [x] Hook up bpm
+        - [x] Current beat is highlitted visually
+        - [x] Adding/subtracting beats works.
+        - [x] Hook up gain nodes to sliders
 - [ ] Polish UI
+    - [ ] Move colors somewhere sensible
     - [ ] BIG bpm text
     - [ ] Consolidate buttons vertically
     - [ ] Add stop/start button
@@ -11,8 +20,12 @@
     - [x] Beats
         - [x] Beats are all same base color,
         - [x] When a beat is active, it "highlighted in the active color"
+- [ ] Refactor the timer code. Organize functions/code-splitting.
+- [ ] Sometimes the beat doesn't reset to -1
+- [ ] `findDOMNode` issue with rc-slider...fork and pull?
 - [ ] Minimum beats = 1
 - [ ] Slider UI: *maybe* opacity changes with velocity
+- [ ] Couldn't figure out how to unmount uncessary requestAnimationFrames.
 - [x] Hook up range components
 - [x] Review css modules with the new way that beats work.
 - [x] Start writing tests. Helpful tutorial: https://www.freecodecamp.org/news/8-simple-steps-to-start-testing-react-apps-using-react-testing-library-and-jest/#basics

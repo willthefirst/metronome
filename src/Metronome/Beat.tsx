@@ -4,16 +4,15 @@ import style from "../styles/beat.module.scss";
 
 export interface BeatState {
 	volume: number;
-	on: boolean;
 }
 
 type BeatProps = {
 	volume: number;
-	on: boolean;
+	isActive: boolean;
 	onVolumeUpdate: (val: number) => void;
 };
 
-function Beat({ volume, on, onVolumeUpdate }: BeatProps) {
+function Beat({ volume, isActive, onVolumeUpdate }: BeatProps) {
 	return (
 		<div className={style.beat}>
 			<InputRange
@@ -21,7 +20,7 @@ function Beat({ volume, on, onVolumeUpdate }: BeatProps) {
 				value={volume}
 				min={0}
 				max={100}
-				on={on}
+				on={isActive}
 				onChange={onVolumeUpdate}
 				ariaLabelForHandle='beat-slider'
 			/>
