@@ -7,9 +7,22 @@ import Row from "./Row";
 import { BeatState } from "./Beat";
 import BeatControls from "./BeatControls";
 
+declare global {
+	interface Window {
+		webkitAudioContext: typeof AudioContext;
+	}
+}
+
 function createContext(): AudioContext {
-	const AudioCtx = window.AudioContext;
+	const AudioCtx = window.AudioContext || window.webkitAudioContext;
 	const audioCtx = new AudioCtx();
+
+	// Added this here to force the audio context to start in Safari 12/20/20.
+	// Possibly can remove once Safari fully implements WebAudio.
+	if (audioCtx!.state === "suspended") {
+		audioCtx.resume();
+	}
+
 	return audioCtx;
 }
 
@@ -29,7 +42,7 @@ let lookahead = 10.0; // How frequently to call scheduling function (in millisec
 let scheduleAheadTime = 0.025; // How far ahead to schedule audio (sec)
 const notesInQueue: { note: number; time: number }[] = [];
 
-let audioBuffers: [] | AudioBuffer[] = [];
+let audioBuffers: [] | AudioBuffer[] | any = [];
 
 const getNextNoteTime = (currTime: number, bpm: number) => {
 	const secondsPerBeat = 60.0 / bpm;
@@ -42,7 +55,7 @@ function scheduleNote(currentBeat: number, volume: number, time: number) {
 		const lastScheduledNote = notesInQueue[numNotes - 1].note;
 		if (lastScheduledNote === currentBeat) {
 			return;
-		};
+		}
 	}
 
 	notesInQueue.push({ note: currentBeat, time: time });
@@ -65,21 +78,29 @@ const playSoundAtTime = (buffer: AudioBuffer | null, volume: number, time: numbe
 	sampleSource.start(time);
 };
 
-async function setupSamples(audioContext: AudioContext): Promise<AudioBuffer[]> {
-	const samples = [`click.wav`, `accent.wav`];
-	const audioBuffers = await Promise.all(
-		samples.map(async (sample) => {
-			const response = await fetch(`${process.env.PUBLIC_URL}/sounds/${sample}`);
-			const arrayBuffer = await response.arrayBuffer();
-			return audioContext.decodeAudioData(arrayBuffer);
-		})
-	);
-	return audioBuffers;
-}
-const loadSamples = async () => {
+function setupSamples() {
 	audioCtx = createContext();
-	audioBuffers = await setupSamples(audioCtx);
-};
+
+	const samples = [`click.wav`, `accent.wav`];
+	const promises = samples.map(async (sample) => {
+		const response = await fetch(`${process.env.PUBLIC_URL}/sounds/${sample}`);
+		const arrayBuffer = await response.arrayBuffer();
+		// Using callbacks because promise syntax doesn't work in Safari (12/9/20)
+		// https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/decodeAudioData#Older_callback_syntax
+		return new Promise((resolve, reject) => {
+			audioCtx!.decodeAudioData(
+				arrayBuffer,
+				function (result: AudioBuffer): void {
+					resolve(result);
+				},
+				function (e): void {
+					reject(e);
+				}
+			);
+		});
+	});
+	return Promise.all(promises);
+}
 
 function nextBeat(prevBeat: any, beats: BeatState[]): number {
 	// Advance the beat number, wrap to zero
@@ -100,31 +121,28 @@ function Metronome() {
 	const start = async () => {
 		// Initialize audio if needed
 		if (!audioCtx) {
-			await loadSamples();
+			const buffers = await setupSamples();
+			audioBuffers = buffers;
 		} // check if context is in suspended state (autoplay policy)
-		else if (audioCtx.state === "suspended") {
-			audioCtx.resume();
+		
+		if (audioCtx!.state === "suspended") {
+			audioCtx!.resume();
 		}
 
 		nextBeatTime = audioCtx!.currentTime;
+		return;
 	};
 
 	useEffect(() => {
 		function scheduler() {
 			const currentTime = audioCtx!.currentTime;
-
 			// While there are notes that will need to play before the next interval, schedule them and advance the pointer.
 			while (nextBeatTime < currentTime + scheduleAheadTime) {
 				const beatIndex = nextBeat(currentBeatRef.current, beats);
 				const volume = beats[beatIndex].volume;
-
-				// if (!notesInQueue.length || notesInQueue[notesInQueue.length - 1].note !== beatIndex) {
-
 				scheduleNote(beatIndex, volume, nextBeatTime);
-				// }
 				nextBeatTime = getNextNoteTime(currentTime, bpm);
 			}
-
 			timerID = setTimeout(scheduler, lookahead);
 		}
 
@@ -165,7 +183,11 @@ function Metronome() {
 		if (isPlaying) {
 			stopAndReset();
 		} else {
-			await start();
+			try {
+				await start();
+			} catch (error) {
+				console.error(error);
+			}
 		}
 		isPlayingRef.current = !isPlayingRef.current;
 		setPlaying(isPlayingRef.current);
