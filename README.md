@@ -2,7 +2,6 @@
 
 ## Todo
 - [ ] Refactor the timer code, bulletproofing/testing.
-    - [ ] `findDOMNode` issue with rc-slider...fork and pull?
     - [ ] Refactor css styling, remove unecessaries
     - [x] Andrew broke it by setting it to zero
     - [x] Minimum beats = 1
@@ -40,6 +39,9 @@
 
 ## Ideas
 - Many color schemes?
+
+## Known issues
+    - `findDOMNode` issue with rc-slider gives [a warning](https://github.com/react-component/slider/issues/613)
 
 ## Eventual blogpost learnings
 - Using flexbox and css grids

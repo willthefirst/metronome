@@ -17,7 +17,7 @@ let defaultBeats: BeatState[] = [{ volume: 100 }, { volume: 50 }, { volume: 25 }
 
 let settings = {
 	isPlaying: false,
-	bpm: 240,
+	bpm: 88,
 	beats: defaultBeats,
 	currentBeat: -1
 };

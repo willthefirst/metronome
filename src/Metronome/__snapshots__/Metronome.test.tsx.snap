@@ -7,62 +7,7 @@ exports[`should take a snapshot of the whole app 1`] = `
   >
     <div
       class="row"
-    >
-      <div
-        class="flexCenter left"
-      >
-        <span
-          class="numDisplay"
-        >
-          88
-        </span>
-        <div
-          class="rc-slider"
-        >
-          <div
-            class="rc-slider-rail"
-            style="background-color: rgb(241, 250, 238); width: 100%; height: 100%; border-radius: 0;"
-          />
-          <div
-            class="rc-slider-track"
-            style="background-color: rgb(168, 218, 220); width: 24%; height: 100%; left: 0%; border-radius: 0;"
-          />
-          <div
-            class="rc-slider-step"
-          />
-          <div
-            aria-disabled="false"
-            aria-label="bpm-slider"
-            aria-valuemax="240"
-            aria-valuemin="40"
-            aria-valuenow="88"
-            class="rc-slider-handle"
-            role="slider"
-            style="height: 0px; border-radius: 0; margin: 0px; left: 24%; transform: translateX(-50%);"
-            tabindex="0"
-          />
-          <div
-            class="rc-slider-mark"
-          />
-        </div>
-      </div>
-      <div
-        class="flexCenter right"
-      >
-        <button
-          aria-label="increase-4-bpm"
-        >
-          +4 bpm
-        </button>
-        <button
-          aria-label="decrease-4-bpm"
-        >
-          -4 bpm
-        </button>
-      </div>
-    </div>
-    <div
-      class="row"
+      style="flex-grow: 3;"
     >
       <div
         class="flexCenter left"
@@ -75,11 +20,11 @@ exports[`should take a snapshot of the whole app 1`] = `
           >
             <div
               class="rc-slider-rail"
-              style="background-color: rgb(69, 123, 157); width: 100%; height: 100%; border-radius: 0;"
+              style="background-color: rgb(241, 250, 238); width: 100%; height: 100%; border-radius: 0;"
             />
             <div
               class="rc-slider-track"
-              style="background-color: rgb(29, 53, 87); width: 100%; height: 100%; left: 0px; border-radius: 0; bottom: 0%;"
+              style="background-color: rgb(168, 218, 220); width: 100%; height: 100%; left: 0px; border-radius: 0; bottom: 0%;"
             />
             <div
               class="rc-slider-step"
@@ -200,29 +145,120 @@ exports[`should take a snapshot of the whole app 1`] = `
           </div>
         </div>
       </div>
+    </div>
+    <div
+      class="row"
+      style="flex-grow: 1;"
+    >
       <div
-        class="flexCenter right"
+        class="flexCenter"
       >
         <button
-          aria-label="add-beat"
+          aria-label="remove-beat"
+          style="background-color: rgb(241, 250, 238); color: rgb(29, 53, 87);"
         >
-          + beat
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            version="1.1"
+            viewBox="0 0 16 16"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 6.5v3c0 0.276 0.224 0.5 0.5 0.5h15c0.276 0 0.5-0.224 0.5-0.5v-3c0-0.276-0.224-0.5-0.5-0.5h-15c-0.276 0-0.5 0.224-0.5 0.5z"
+            />
+          </svg>
         </button>
         <button
-          aria-label="remove-beat"
+          aria-label="add-beat"
+          style="background-color: rgb(241, 250, 238); color: rgb(29, 53, 87);"
         >
-          - beat
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            version="1.1"
+            viewBox="0 0 16 16"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15.5 6h-5.5v-5.5c0-0.276-0.224-0.5-0.5-0.5h-3c-0.276 0-0.5 0.224-0.5 0.5v5.5h-5.5c-0.276 0-0.5 0.224-0.5 0.5v3c0 0.276 0.224 0.5 0.5 0.5h5.5v5.5c0 0.276 0.224 0.5 0.5 0.5h3c0.276 0 0.5-0.224 0.5-0.5v-5.5h5.5c0.276 0 0.5-0.224 0.5-0.5v-3c0-0.276-0.224-0.5-0.5-0.5z"
+            />
+          </svg>
         </button>
       </div>
     </div>
     <div
       class="row"
+      style="flex-grow: 1;"
+    >
+      <div
+        class="flexCenter vertCenter"
+      >
+        <span
+          style="position: absolute; z-index: 1; color: rgb(29, 53, 87);"
+        >
+          88 bpm
+        </span>
+        <div
+          class="rc-slider"
+        >
+          <div
+            class="rc-slider-rail"
+            style="background-color: rgb(241, 250, 238); width: 100%; height: 100%; border-radius: 0;"
+          />
+          <div
+            class="rc-slider-track"
+            style="background-color: rgb(168, 218, 220); width: 24%; height: 100%; left: 0%; border-radius: 0;"
+          />
+          <div
+            class="rc-slider-step"
+          />
+          <div
+            aria-disabled="false"
+            aria-label="bpm-slider"
+            aria-valuemax="240"
+            aria-valuemin="40"
+            aria-valuenow="88"
+            class="rc-slider-handle"
+            role="slider"
+            style="height: 0px; border-radius: 0; margin: 0px; left: 24%; transform: translateX(-50%);"
+            tabindex="0"
+          />
+          <div
+            class="rc-slider-mark"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="row"
+      style="flex-grow: 1;"
     >
       <button
         aria-label="start-stop"
-        style="width: 100%;"
+        style="width: 100%; background-color: rgb(144, 190, 109);"
       >
-        Start
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="0"
+          style="color: rgb(79, 147, 28);"
+          version="1.1"
+          viewBox="0 0 16 16"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M3 2l10 6-10 6z"
+          />
+        </svg>
       </button>
     </div>
   </div>
