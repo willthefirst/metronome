@@ -5,8 +5,8 @@ Website: [www.beatsperminute.click](www.beatsperminute.click)
 
 ## Todo
 - [ ] Bulletproofing
-    - No sound on iOS
-    - Favicon looks too small on firefox and everything else, sizing go screwed up.
+    - [x] No sound on iOS
+    - [ ] Favicon looks too small on firefox and everything else, sizing go screwed up.
     - Icon appears black on iPhone and Android
 - [ ] Make it stupid clear that people can install as an app
 - [ ] https://create-react-app.dev/docs/analyzing-the-bundle-size
