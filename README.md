@@ -2,7 +2,8 @@
 
 ## Todo
 - [ ] Refactor the timer code, bulletproofing/testing.
-    - [ ] Refactor css styling, remove unecessaries
+    - [ ] Reorganize directory structure
+    - [x] Refactor css styling, remove unecessaries
     - [x] Andrew broke it by setting it to zero
     - [x] Minimum beats = 1
     - [x] Sometimes the beat doesn't reset to -1

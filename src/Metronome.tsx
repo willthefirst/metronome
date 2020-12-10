@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import layout from "../styles/layout.module.scss";
+import layout from "./styles/layout.module.scss";
 import BPM from "./BPM";
 import Conductor from "./Conductor";
 import PlayButton from "./PlayButton";

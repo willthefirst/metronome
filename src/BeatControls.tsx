@@ -1,9 +1,9 @@
 import React from "react";
-import layout from "../styles/layout.module.scss";
+import layout from "./styles/layout.module.scss";
 import cx from "classnames";
 import { BeatState } from "./Beat";
 import { ImMinus, ImPlus } from "react-icons/im";
-import color from "../styles/color";
+import color from "./styles/color";
 
 type BeatControlsProps = {
 	className?: string;

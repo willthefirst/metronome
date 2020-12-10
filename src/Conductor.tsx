@@ -1,5 +1,5 @@
 import React from "react";
-import layout from "../styles/layout.module.scss";
+import layout from "./styles/layout.module.scss";
 import cx from "classnames";
 import Beat, { BeatState } from "./Beat";
 

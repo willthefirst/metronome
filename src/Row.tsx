@@ -1,5 +1,5 @@
 import React from "react";
-import layout from "../styles/layout.module.scss";
+import layout from "./styles/layout.module.scss";
 
 type RowProps = {
     height?: number;
