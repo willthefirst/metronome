@@ -2,7 +2,7 @@
 /* eslint-disable no-restricted-globals */
 
 import { clientsClaim } from 'workbox-core';
-import { precacheAndRoute, createHandlerBoundToURL } from 'workbox-precaching';
+import { precacheAndRoute } from 'workbox-precaching';
 
 declare const self: ServiceWorkerGlobalScope;
 

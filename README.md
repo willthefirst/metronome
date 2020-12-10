@@ -1,18 +1,16 @@
 # Metronome
 
 ## Todo
-- [ ] Make it a progressive app using react docs rec, considering the various optimizations they recommend (like analyzing the bundle size)
-- [ ] Loads offline.
-- [ ] https://create-react-app.dev/docs/measuring-performance
-- [ ] https://create-react-app.dev/docs/production-build
-- [ ] Remember previous state
+- [x] Make it a progressive app using react docs rec, considering the various optimizations they recommend (like analyzing the bundle size)
+- [x] Loads offline.
+- [z] https://create-react-app.dev/docs/production-build
 - [ ] Icon for the download
     - https://web.dev/add-manifest/
 - [ ] Loading screen
 - [ ] *maybe* this: Users aren't always familiar with offline-first web apps. It can be useful to let the user know when the service worker has finished populating your caches (showing a "This web app works offline!" message) and also let them know when the service worker has fetched the latest updates that will be available the next time they load the page (showing a "New content is available once existing tabs are closed." message). Showing these messages is currently left as an exercise to the developer, but as a starting point, you can make use of the logic included in src/serviceWorker.js, which demonstrates which service worker lifecycle events to listen for to detect each scenario, and which as a default, only logs appropriate messages to the JavaScript console.
-- [ ] Reorganize with code-splitting recs from react docs
 - [ ] UI improvements: *maybe* opacity changes with velocity
     - Reactive button colors on :active
+- [ ] Get analytics going with reportWebVitals? Learn more about this stuff?
 - [x] Hook up range components
 - [x] Review css modules with the new way that beats work.
 - [x] Start writing tests. Helpful tutorial: https://www.freecodecamp.org/news/8-simple-steps-to-start-testing-react-apps-using-react-testing-library-and-jest/#basics
