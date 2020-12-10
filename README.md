@@ -1,4 +1,4 @@
-# Metronome [![Netlify Status](https://api.netlify.com/api/v1/badges/6bf307f3-bb47-4482-92ae-f7d20ad900d5/deploy-status)](https://app.netlify.com/sites/anothermetronome/deploys)
+# Metronome [![Netlify Status](https://api.netlify.com/api/v1/badges/6bf307f3-bb47-4482-92ae-f7d20ad900d5/deploy-status)](https://app.netlify.com/sites/beatsperminute/deploys)
 
 ## Production website
 
@@ -12,6 +12,10 @@ Run locally: `yarn start`
 When committing, use [git flow methodology](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) (and consider installing the [git flow package](https://github.com/nvie/gitflow/wiki/Installation) for ease-of-use).
 
 ## Todo
+- [ ] Audio issue
+    - Safari: never loads in production, only locally.
+    - Firefox: in production, only works on second visit to page, not immediately.
+    - Chrome: dandy in production
 - [ ] https://create-react-app.dev/docs/analyzing-the-bundle-size
 - [ ] Make it stupid clear that people can install as an app
 - [ ] *maybe* this: Users aren't always familiar with offline-first web apps. It can be useful to let the user know when the service worker has finished populating your caches (showing a "This web app works offline!" message) and also let them know when the service worker has fetched the latest updates that will be available the next time they load the page (showing a "New content is available once existing tabs are closed." message). Showing these messages is currently left as an exercise to the developer, but as a starting point, you can make use of the logic included in src/serviceWorker.js, which demonstrates which service worker lifecycle events to listen for to detect each scenario, and which as a default, only logs appropriate messages to the JavaScript console.
