@@ -6,8 +6,9 @@ Website: [www.beatsperminute.click](www.beatsperminute.click)
 ## Todo
 - [ ] Bulletproofing
     - [x] No sound on iOS
-    - [ ] Favicon looks too small on firefox and everything else, sizing go screwed up.
-    - Icon appears black on iPhone and Android
+    - [x] Favicon looks too small on firefox and everything else, sizing go screwed up.
+    - [x] Icon appears black on iPhone and Android
+    
 - [ ] Make it stupid clear that people can install as an app
 - [ ] https://create-react-app.dev/docs/analyzing-the-bundle-size
 - [ ] *maybe* this: Users aren't always familiar with offline-first web apps. It can be useful to let the user know when the service worker has finished populating your caches (showing a "This web app works offline!" message) and also let them know when the service worker has fetched the latest updates that will be available the next time they load the page (showing a "New content is available once existing tabs are closed." message). Showing these messages is currently left as an exercise to the developer, but as a starting point, you can make use of the logic included in src/serviceWorker.js, which demonstrates which service worker lifecycle events to listen for to detect each scenario, and which as a default, only logs appropriate messages to the JavaScript console.
