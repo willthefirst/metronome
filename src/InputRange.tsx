@@ -1,8 +1,8 @@
 import * as React from "react";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
-import "../styles/input.scss";
-import color from "../styles/color";
+import "./styles/input.scss";
+import color from "./styles/color";
 
 type InputRangeProps = {
 	vertical?: boolean;
@@ -12,7 +12,6 @@ type InputRangeProps = {
 	on?: boolean;
 	onChange: (val: number) => void;
 	ariaLabelForHandle: string;
-	// handle?: Function
 };
 
 function InputRange(props: InputRangeProps) {

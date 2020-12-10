@@ -1,5 +1,5 @@
 import React from "react";
-import color from "../styles/color";
+import color from "./styles/color";
 import { ImStop2, ImPlay3 } from "react-icons/im";
 
 type PlayButtonProps = {

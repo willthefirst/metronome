@@ -1,14 +1,22 @@
 # Metronome
 
 ## Todo
+- [ ] Refactor the timer code, bulletproofing/testing.
+    - [ ] Reorganize directory structure
+    - [x] Refactor css styling, remove unecessaries
+    - [x] Andrew broke it by setting it to zero
+    - [x] Minimum beats = 1
+    - [x] Sometimes the beat doesn't reset to -1
+    - [x] Couldn't figure out how to unmount uncessary requestAnimationFrames.
+    - [x] Use useRef in the places where you're using `setX...` just to access but not change state.
+    - [x] First beat always seems to hang
+- [ ] Make it a progressive app using react docs rec, considering the various optimizations they recommend (like analyzing the bundle size)
+    - [ ] Remember previous state
+    - [ ] Icon for the download
+
 - [ ] Reorganize with code-splitting recs from react docs
-- [ ] Refactor the timer code. Organize functions/code-splitting.
-- [ ] Sometimes the beat doesn't reset to -1
-- [ ] `findDOMNode` issue with rc-slider...fork and pull?
-- [ ] Minimum beats = 1
-- [ ] Slider UI: *maybe* opacity changes with velocity
-- [ ] Couldn't figure out how to unmount uncessary requestAnimationFrames.
-- [ ] Make it a progressive app using react docs rec
+- [ ] UI improvements: *maybe* opacity changes with velocity
+    - Reactive button colors on :active
 - [x] Hook up range components
 - [x] Review css modules with the new way that beats work.
 - [x] Start writing tests. Helpful tutorial: https://www.freecodecamp.org/news/8-simple-steps-to-start-testing-react-apps-using-react-testing-library-and-jest/#basics
@@ -33,6 +41,9 @@
 ## Ideas
 - Many color schemes?
 
+## Known issues
+    - `findDOMNode` issue with rc-slider gives [a warning](https://github.com/react-component/slider/issues/613)
+
 ## Eventual blogpost learnings
 - Using flexbox and css grids
 - Jest
@@ -40,6 +51,7 @@
 
 ## Resources
 - [Free Code Camp's tutorial on Jest](https://www.freecodecamp.org/news/8-simple-steps-to-start-testing-react-apps-using-react-testing-library-and-jest/#8-testing-http-request)
+- [How to deal with Stale closures in React app] https://leewarrick.com/blog/react-use-effect-explained/
 
 # Getting Started with Create React App
 
