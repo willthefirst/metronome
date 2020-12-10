@@ -1,6 +1,6 @@
 import * as React from "react";
 import InputRange from "./InputRange";
-import style from "../styles/beat.module.scss";
+import style from "./styles/beat.module.scss";
 
 export interface BeatState {
 	volume: number;

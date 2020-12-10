@@ -6,13 +6,13 @@
 
 .row {
 	display: flex;
-	flex-grow: 1;
+	flex-basis: 10px;
 }
 
 .flexCenter {
 	display: flex;
+	flex-grow: 1;
 	flex-direction: row;
-	align-items: stretch;
 	justify-content: space-around;
 
 	>* {
@@ -20,10 +20,10 @@
 	}
 }
 
-.left {
-	flex: 3 1 10px;
+.vertStretch {
+	align-items: stretch;
 }
 
-.right {
-	flex: 1 1 10px;
+.vertCenter {
+	align-items: center;
 }

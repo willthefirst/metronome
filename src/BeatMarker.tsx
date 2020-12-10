@@ -1,5 +1,5 @@
 import * as React from "react";
-import style from "../styles/beat.module.scss";
+import style from "./styles/beat.module.scss";
 import cx from "classnames";
 
 type BeatMarkerProps = {

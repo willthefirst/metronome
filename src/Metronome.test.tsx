@@ -1,6 +1,6 @@
 import React from "react";
 import { render, cleanup } from "@testing-library/react";
-import Metronome from ".";
+import Metronome from "./Metronome";
 
 afterEach(cleanup);
 
