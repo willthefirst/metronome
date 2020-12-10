@@ -1,7 +1,7 @@
 import * as React from "react";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
-import "./sdstyles/input.scss";
+import "./styles/input.scss";
 import color from "./styles/color";
 
 type InputRangeProps = {
