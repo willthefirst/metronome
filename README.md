@@ -1,12 +1,7 @@
 # Metronome
 
 ## Todo
-- [x] Make it a progressive app using react docs rec, considering the various optimizations they recommend (like analyzing the bundle size)
-- [x] Loads offline.
-- [z] https://create-react-app.dev/docs/production-build
-- [ ] Icon for the download
-    - https://web.dev/add-manifest/
-- [ ] Loading screen
+
 - [ ] *maybe* this: Users aren't always familiar with offline-first web apps. It can be useful to let the user know when the service worker has finished populating your caches (showing a "This web app works offline!" message) and also let them know when the service worker has fetched the latest updates that will be available the next time they load the page (showing a "New content is available once existing tabs are closed." message). Showing these messages is currently left as an exercise to the developer, but as a starting point, you can make use of the logic included in src/serviceWorker.js, which demonstrates which service worker lifecycle events to listen for to detect each scenario, and which as a default, only logs appropriate messages to the JavaScript console.
 - [ ] UI improvements: *maybe* opacity changes with velocity
     - Reactive button colors on :active
@@ -40,6 +35,12 @@
     - [x] Couldn't figure out how to unmount uncessary requestAnimationFrames.
     - [x] Use useRef in the places where you're using `setX...` just to access but not change state.
     - [x] First beat always seems to hang
+- [x] Make it a progressive app using react docs rec, considering the various optimizations they recommend (like analyzing the bundle size)
+- [x] Loads offline.
+- [z] https://create-react-app.dev/docs/production-build
+- [x] Icon for the download
+    - https://web.dev/add-manifest/
+- [x] Loading screen
 
 ## Ideas
 - Many color schemes?
