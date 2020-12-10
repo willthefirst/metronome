@@ -81,7 +81,7 @@ const playSoundAtTime = (buffer: AudioBuffer | null, volume: number, time: numbe
 function setupSamples() {
 	audioCtx = createContext();
 
-	const samples = [`click.wav`, `accent.wav`];
+	const samples = [`click.mp3`, `accent.mp3`];
 	const promises = samples.map(async (sample) => {
 		const response = await fetch(`${process.env.PUBLIC_URL}/sounds/${sample}`);
 		const arrayBuffer = await response.arrayBuffer();
