@@ -2,7 +2,6 @@
 
 ## Todo
 - [ ] Refactor the timer code, bulletproofing/testing.
-    - [ ] First beat always seems to hang
     - [ ] `findDOMNode` issue with rc-slider...fork and pull?
     - [ ] Refactor css styling, remove unecessaries
     - [x] Andrew broke it by setting it to zero
@@ -10,6 +9,7 @@
     - [x] Sometimes the beat doesn't reset to -1
     - [x] Couldn't figure out how to unmount uncessary requestAnimationFrames.
     - [x] Use useRef in the places where you're using `setX...` just to access but not change state.
+    - [x] First beat always seems to hang
 - [ ] Make it a progressive app using react docs rec, considering the various optimizations they recommend (like analyzing the bundle size)
     - [ ] Remember previous state
     - [ ] Icon for the download

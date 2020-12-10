@@ -17,7 +17,7 @@ let defaultBeats: BeatState[] = [{ volume: 100 }, { volume: 50 }, { volume: 25 }
 
 let settings = {
 	isPlaying: false,
-	bpm: 88,
+	bpm: 240,
 	beats: defaultBeats,
 	currentBeat: -1
 };
@@ -25,8 +25,8 @@ let settings = {
 let audioCtx: AudioContext | undefined = undefined;
 let nextBeatTime: number = 0;
 let timerID: NodeJS.Timeout;
-let lookahead = 25.0; // How frequently to call scheduling function (in milliseconds)
-let scheduleAheadTime = 0.1; // How far ahead to schedule audio (sec)
+let lookahead = 10.0; // How frequently to call scheduling function (in milliseconds)
+let scheduleAheadTime = 0.025; // How far ahead to schedule audio (sec)
 const notesInQueue: { note: number; time: number }[] = [];
 
 let audioBuffers: [] | AudioBuffer[] = [];
@@ -37,7 +37,16 @@ const getNextNoteTime = (currTime: number, bpm: number) => {
 };
 
 function scheduleNote(currentBeat: number, volume: number, time: number) {
+	const numNotes = notesInQueue.length;
+	if (numNotes) {
+		const lastScheduledNote = notesInQueue[numNotes - 1].note;
+		if (lastScheduledNote === currentBeat) {
+			return;
+		};
+	}
+
 	notesInQueue.push({ note: currentBeat, time: time });
+
 	if (currentBeat === 0) {
 		playSoundAtTime(audioBuffers[1], volume, time); // beat sound
 	} else {
@@ -109,7 +118,10 @@ function Metronome() {
 				const beatIndex = nextBeat(currentBeatRef.current, beats);
 				const volume = beats[beatIndex].volume;
 
+				// if (!notesInQueue.length || notesInQueue[notesInQueue.length - 1].note !== beatIndex) {
+
 				scheduleNote(beatIndex, volume, nextBeatTime);
+				// }
 				nextBeatTime = getNextNoteTime(currentTime, bpm);
 			}
 
@@ -121,7 +133,7 @@ function Metronome() {
 
 			// Fires when there are notes that need to be played
 			while (notesInQueue.length && notesInQueue[0].time < currentTime) {
-				currentBeatRef.current = notesInQueue[0].note
+				currentBeatRef.current = notesInQueue[0].note;
 				setCurrentBeat(currentBeatRef.current);
 				notesInQueue.splice(0, 1); // remove note from queue
 			}
