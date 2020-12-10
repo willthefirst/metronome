@@ -187,7 +187,7 @@ function Metronome() {
 				await start();
 			} catch (error) {
 				alert(error.message);
-				// return;
+				return;
 			}
 		}
 		isPlayingRef.current = !isPlayingRef.current;
