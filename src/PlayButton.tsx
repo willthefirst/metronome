@@ -8,14 +8,22 @@ type PlayButtonProps = {
 };
 
 function PlayButton({ isPlaying, handleToggle }: PlayButtonProps) {
-	let bgc = isPlaying ? color.dangerLight : color.successLight
-	const icon = isPlaying ? <ImStop2 style={{color: color.dangerDark}}/> : <ImPlay3 style={{color: color.successDark}}/>
+	let bgc = isPlaying ? color.dangerLight : color.successLight;
+	const icon = isPlaying ? (
+		<ImStop2 style={{ color: color.dangerDark }} />
+	) : (
+		<ImPlay3 style={{ color: color.successDark }} />
+	);
 
 	return (
-	<button style={{ width: "100%", backgroundColor: bgc }} onClick={() => handleToggle()} aria-label='start-stop' >
+		<button
+			style={{ width: "100%", backgroundColor: bgc }}
+			onClick={() => handleToggle()}
+			aria-label='start-stop'
+			autoFocus
+		>
 			{icon}
 		</button>
-
 	);
 }
 
