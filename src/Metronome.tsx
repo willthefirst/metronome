@@ -59,7 +59,6 @@ function scheduleNote(currentBeat: number, volume: number, time: number) {
 	}
 
 	notesInQueue.push({ note: currentBeat, time: time });
-
 	if (currentBeat === 0) {
 		playSoundAtTime(audioBuffers[1], volume, time); // beat sound
 	} else {
