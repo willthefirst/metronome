@@ -2,7 +2,7 @@
 
 ## Production website
 
-[www.beatsperminute.click](www.beatsperminute.click)
+[www.beatsperminute.click](https://www.beatsperminute.click)
 
 ## Development
 
