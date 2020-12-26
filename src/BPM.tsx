@@ -13,7 +13,7 @@ type BPMProps = {
 };
 
 function BPM({ className, value, min, max, handleChange }: BPMProps) {
-	const numDisplay = <span style={{ position: "absolute", zIndex: 1, color: color.primaryDark }}>{value} bpm</span>;
+	const numDisplay = <span className="unselectable" style={{ position: "absolute", zIndex: 1, color: color.primaryDark }}>{value} bpm</span>;
 	return (
 		<div className={cx(layout.flexCenter, layout.vertCenter)}>
 			{numDisplay}
